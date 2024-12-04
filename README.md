@@ -66,9 +66,9 @@ This is a common tool Windows users use to visually navigate all the files store
 
 We'll also take a look at the Control Panel.
 
-This is where we can interact and change settings to our operating system. 
+This is where we can interact and change settings to our operating system. Use the search box to open it up.
 
-```image of the control panel```
+<img width="750" alt="Control panel" src="https://github.com/user-attachments/assets/77e4089f-f9e3-412b-a5a7-4aa912fd3c63">
 
 Notice how there's a centralized interface where we can adjust a wide range of system and hardware configurations.
 
@@ -76,7 +76,7 @@ That being said, there is a more modern view of this called Windows Settings.
 
 We can view this by going to our Start menu, typing in "Settings," and selecting the app. 
 
-```image of Windows Settings```
+<img width="750" alt="Windows settings" src="https://github.com/user-attachments/assets/c6055b47-ff91-4109-84df-92cd7b67b2a7">
 
 Notice the similarities with the Control Panel, yet with a more simple and modern view. 
 
@@ -84,26 +84,22 @@ This represents how, over time, Windows has tried to make their operating system
 
 Next let's look at notifications by locating the Action Center, represented by a speech bubble icon on the bottom right of the taskbar.
 
-```speech bubble```
+<img width="750" alt="Action Center" src="https://github.com/user-attachments/assets/2e4f847a-2287-4aa0-bfde-33266f95bf81">
 
 After selecting it, a window will pop up with notifications and additional settings. 
 
-```image of that```
+<img width="750" alt="notifications in action center" src="https://github.com/user-attachments/assets/10aa2ce5-75cc-450d-ae90-0c1ca94a3d2c">
 
 Now we'll look at how to open multiple "views" or "desktops" by finding the Task View button on the taskbar.
 
 It's located to the right of the search box.
 
-```image of icon```
+<img width="750" alt="Task View Icon" src="https://github.com/user-attachments/assets/99403856-89e0-448b-9fb7-5de6f97f0da9">
 
 It's designed to segment work into distinct categories, reducing cognitive load and improving focus on specific tasks or projects.
 
-Select it to open it up.
+We can demonstrate the power of this by opening up applications in different "views," which is just a another way of saying virtual desktops. 
 
-```open view```
-
-We can demonstrate the power of this by opening up different applications in different "views," which is just a shorthand way of saying virtual desktops. 
-
-```demonstrate this```
+<img width="944" alt="Task View" src="https://github.com/user-attachments/assets/72f6c40e-383c-4885-881b-788873f23451">
 
 We can use Task View to manage multiple desktops and applications simultaneously for increased productivity.
