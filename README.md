@@ -1,45 +1,6 @@
 # Windows-OS-Fundamentals
 ## Table of Contents
-[Test 1](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#test-1)
+[Introduction](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#introduction)
 
+# Introduction
 
-
-asldkjf
-
-;alskjfd
-
-;aldskjf
-
-;lakjfds
-
-lkajdsf
-
-d
-
-d
-
-
-d
-
-d
-
-d
-
-d
-
-d
-
-d
-
-d
-
-dd
-
-
-
-
-# Test 1
-
-# Test 2
-
-# Test 3
