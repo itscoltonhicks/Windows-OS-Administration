@@ -56,13 +56,13 @@ We can also customize the taskbar by accessing the taskbar settings again, and a
 
 This time we'll use the "Taskbar settings" to view these options.
 
-```image of taskbar settings```
+<img width="750" alt="taskbar settings" src="https://github.com/user-attachments/assets/6817ff3f-7db7-47c0-bd9d-7fe6787d403e">
 
 Now we'll take a look at the file explorer tool. 
 
 This is a common tool Windows users use to visually navigate all the files stored on the system.
 
-```image with icon and file explorer```
+<img width="750" alt="file explorer" src="https://github.com/user-attachments/assets/027c0401-1f1a-444d-89bb-146268cec8c5">
 
 We'll also take a look at the Control Panel.
 
