@@ -10,4 +10,6 @@ This is why it's important to have a strong foundation in system administration.
 
 In this project, I'll be covering the fundamentals of the Windows OS.
 
-# Lab #1: Navigating Windows
+# Lab #1: Navigating the Windows Desktop
+
+
