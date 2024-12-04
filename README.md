@@ -1,6 +1,6 @@
 # Windows-OS-Fundamentals
 ## Table of Contents
-[Test 1](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/edit/main/README.md#test-1)
+[Test 1](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#test-1)
 
 
 
