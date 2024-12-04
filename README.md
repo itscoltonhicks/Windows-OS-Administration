@@ -12,4 +12,98 @@ In this project, I'll be covering the fundamentals of the Windows OS.
 
 # Lab #1: Navigating the Windows Desktop
 
+Let's start with the absolute basics of Windows OS. 
 
+There are two ways to navigate Windows—through the Command Line Interface (CLI), or the Graphical User Interface (GUI). That being said, Windows is a "GUI-first" operating system. It makes navigating Windows systems accessible to a broader range of users (especially non-technical ones). 
+
+Let's start by clicking the Windows icon located in the bottom left corner of the screen.
+
+<img width="750" alt="Start Menu" src="https://github.com/user-attachments/assets/89409754-fd1e-4886-9065-03885f087e7a">
+
+This opens the Start Menu, which is like Windows' central navigation hub.
+
+This allows us to search for applications we want to use. Then we can simply select them to run them. For instance, we can select the ```copilot```application to run it.
+
+<img width="750" alt="run copilot" src="https://github.com/user-attachments/assets/a36bcee6-9650-48bf-87ef-c2b4e15a29c4">
+
+Within this menu view, we can also pin items directly to the Start menu or taskbar for quick access. 
+
+Right-click them to open up a context menu and pin to start.
+
+<img width="750" alt="pin to start" src="https://github.com/user-attachments/assets/97ead9ba-ad07-4f51-ac48-1f9f35022253">
+
+Next we'll check out the taskbar, which is the bar at the bottom of the screen.
+
+We can right-click it to open up another context menu. This allows us to access additional options such as changing taskbar setting or pinning open icons.
+
+<img width="750" alt="task bar and context menu" src="https://github.com/user-attachments/assets/1b63c7a6-3b1a-42d6-8873-c5cc49a1bc5b">
+
+There are a lot of things we can do with the taskbar. 
+
+For instance, we can quickly clear our current view by selecting "Show the desktop." I'll open up copilot to illustrate this.
+
+<img width="750" alt="show the desktop" src="https://github.com/user-attachments/assets/f8861fcc-583a-4e50-ba6c-2a13d3b3f43a">
+
+This will close the open windows on the desktop. 
+
+<img width="750" alt="cleared desktop view" src="https://github.com/user-attachments/assets/5199eacc-f486-4bfc-997f-b0efa2339b10">
+
+We can go back to the context menu and select "show open windows" to bring the app back into desktop view.
+
+<img width="750" alt="show open windows" src="https://github.com/user-attachments/assets/49df24a7-4d7c-4896-82a5-5a1fa9f0d5ee">
+
+We can also customize the taskbar by accessing the taskbar settings again, and adjusting options such as locking it in place or hiding it automatically.
+
+This time we'll use the "Taskbar settings" to view these options.
+
+```image of taskbar settings```
+
+Now we'll take a look at the file explorer tool. 
+
+This is a common tool Windows users use to visually navigate all the files stored on the system.
+
+```image with icon and file explorer```
+
+We'll also take a look at the Control Panel.
+
+This is where we can interact and change settings to our operating system. 
+
+```image of the control panel```
+
+Notice how there's a centralized interface where we can adjust a wide range of system and hardware configurations.
+
+That being said, there is a more modern view of this called Windows Settings.
+
+We can view this by going to our Start menu, typing in "Settings," and selecting the app. 
+
+```image of Windows Settings```
+
+Notice the similarities with the Control Panel, yet with a more simple and modern view. 
+
+This represents how, over time, Windows has tried to make their operating system more accessible and understandable to a broader range of users.
+
+Next let's look at notifications by locating the Action Center, represented by a speech bubble icon on the bottom right of the taskbar.
+
+```speech bubble```
+
+After selecting it, a window will pop up with notifications and additional settings. 
+
+```image of that```
+
+Now we'll look at how to open multiple "views" or "desktops" by finding the Task View button on the taskbar.
+
+It's located to the right of the search box.
+
+```image of icon```
+
+It's designed to segment work into distinct categories, reducing cognitive load and improving focus on specific tasks or projects.
+
+Select it to open it up.
+
+```open view```
+
+We can demonstrate the power of this by opening up different applications in different "views," which is just a shorthand way of saying virtual desktops. 
+
+```demonstrate this```
+
+We can use Task View to manage multiple desktops and applications simultaneously for increased productivity.
