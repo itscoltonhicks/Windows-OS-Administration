@@ -4,6 +4,8 @@
 
 [Lab #1: Navigating the Windows Desktop](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#lab-1-navigating-the-windows-desktop)
 
+[Lab #2: The Windows File System](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#lab-2-the-windows-file-system)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
