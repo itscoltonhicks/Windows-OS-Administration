@@ -105,3 +105,110 @@ We can demonstrate the power of this by opening up applications in different "vi
 <img width="944" alt="Task View" src="https://github.com/user-attachments/assets/72f6c40e-383c-4885-881b-788873f23451">
 
 We can use Task View to manage multiple desktops and applications simultaneously for increased productivity.
+
+# Lab #2: The Windows File System
+The Windows File System is a fundamental component of the Windows OS.
+
+It's responsible for organizing, storing, and managing data on storage devices. And it's key for system administrators and cybersecurity professionals to understand. It provides the framework for file and folder organization, access control, and data management.
+
+Let's dive into these key concepts.
+
+Open up the File Explorer. 
+
+Observe the navigation pane on the left side.
+
+<img width="750" alt="Navigation Pane" src="https://github.com/user-attachments/assets/d9366032-b89c-4b41-ba35-e94d26b58157">
+
+```Quick access``` contains pinned locations, functioning like favorite links or bookmarks in a browser. 
+
+We can demonstrate this by pinning the ```This PC``` section to the Quick access section.
+
+<img width="620" alt="Pin to quick access" src="https://github.com/user-attachments/assets/dc418562-fac7-4d4d-9c37-175142114db3">
+
+The ```This PC``` section used to be called ```My Computer``` in previous versions of Windows.
+
+It contains attached drives, network shares, and storage devices.
+
+Now let's take a look at the local disk, also called the C: drive. It's the main drive for our Windows File System. View it as the "root" of our file system. 
+
+<img width="621" alt="Local Disk" src="https://github.com/user-attachments/assets/162c5689-98da-4d10-8fc7-a3a0fece3ea9">
+
+Let's explore the ```Users``` folder in the C: drive.
+
+This is where we can find a list of all the user profile folders on the system.
+
+<img width="619" alt="Users Folder" src="https://github.com/user-attachments/assets/859bd74a-6836-40d2-839f-270ea6f71ecf">
+
+Notice how we have ```Colton``` and ```Guest``` user profile folders.
+
+Let's check out the ```Colton``` user profile folder.
+
+<img width="620" alt="Colton User Profile Folder" src="https://github.com/user-attachments/assets/e9129cc9-3e9b-4f3f-8046-11cf254b0547">
+
+Now we can see all of Colton's folders and files. 
+
+If we click the ```Desktop``` folder, we'll see folders and files that live on our desktop. 
+
+This represents the actual Desktop from the GUI.
+
+<img width="800" alt="Desktop folder for Colton User" src="https://github.com/user-attachments/assets/0c1131b5-3b5a-47b0-812c-f2b173b86c83">
+
+We can also navigate the File Explorer using the Address Bar at the top.
+
+Using the same Desktop location, we can navigate there by typing out the following path:
+
+````C:\Users\Colton\Desktop````
+
+<img width="619" alt="Address Bar" src="https://github.com/user-attachments/assets/725c1096-1521-4d3e-9d3d-0a42ca03fde2">
+
+Note that the address bar in File Explorer functions similarly to the address bar in a web browser.
+
+The main difference is we're using a backslash character ```\``` to separate folders and subfolders.
+
+Next let's learn to work with files in the File Explorer. I'll delete my test folder so we have a clean environment.
+
+We can create a file by right-clicking in the directory, hover over "new," and select "Text Document."
+
+<img width="619" alt="New Text Document" src="https://github.com/user-attachments/assets/b30c2e97-54d6-40db-9093-3557ef050f46">
+
+We can copy/paste that file to other locations. Let's put it in the ```Documents``` folder.
+
+<img width="620" alt="Copy test file" src="https://github.com/user-attachments/assets/06430978-0bb2-4baf-afb2-ea1fd84ac16d">
+
+Now it's been copied over there.
+
+<img width="621" alt="paste test file" src="https://github.com/user-attachments/assets/aa6a3bf8-084f-48c7-a12a-8526d2d63eac">
+
+We can also cut and paste a file. This deletes it from its original location and brings it somewhere else. 
+
+Right-click the ```test file``` in the ```Colton > Desktop``` folder and select "Cut."
+
+<img width="750" alt="cut test file" src="https://github.com/user-attachments/assets/9ebb419e-4f0f-4ca7-9786-66de594387ca">
+
+Open the ```Colton > Documents``` folder, right-click anywhere in the empty space, and select "Paste."
+ 
+<img width="750" alt="paste the cut test file" src="https://github.com/user-attachments/assets/ebc5a7f1-196f-4a47-9cf6-7dec7ba9e68f">
+
+Notice how we can no longer see the file on the Desktop. This is because the "Cut" feature deleted it from the original location (the Desktop folder). 
+
+Additionally, we can replace a file by selecting "copy" on a new ```test file``` in a different location, then pasting it into the ```Document``` folder where the file with the same name exists. 
+
+An alert will pop up. And we'll select "Replace the file in the destination."
+
+<img width="619" alt="replace a file" src="https://github.com/user-attachments/assets/577b9529-12f9-4e6f-a3b4-ba16b1a3d606">
+
+Finally, we have the option to delete files.
+
+Right-click the file and select "Delete."
+
+<img width="619" alt="Delete a file" src="https://github.com/user-attachments/assets/31ff79d9-009e-4b31-82e9-c37bc05e64c5">
+
+Observe that the Recycle Bin at the top of the left screen is now filled. 
+
+Our file isn't permanently deleted yet. It's just ready to be deleted in the Recycle Bin. Windows has this function to prevent accidental deletions. 
+
+<img width="750" alt="Recycle Bin" src="https://github.com/user-attachments/assets/8d78c7f2-99d0-4801-b64f-8bf671295e44">
+
+Let's actually delete the file by opening up the Recycle Bin from the desktop, right-clicking anywhere in the white space inside it, and selecting "Empty Recycle Bin."
+
+<img width="750" alt="empty recycle bin" src="https://github.com/user-attachments/assets/ee403816-46c8-4d95-a843-289c398fdc29">
