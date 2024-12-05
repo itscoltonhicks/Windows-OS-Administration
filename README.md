@@ -1,5 +1,5 @@
 # Windows OS Fundamentals (Project Labs In Progress)
-## Table of Contents
+# Table of Contents
 [Introduction](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#introduction)
 
 [Lab #1: Navigating the Windows Desktop](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#lab-1-navigating-the-windows-desktop)
