@@ -109,7 +109,7 @@ We can use Task View to manage multiple desktops and applications simultaneously
 # Lab #2: The Windows File System
 The Windows File System is a fundamental component of the Windows OS.
 
-It's responsible for organizing, storing, and managing data on storage devices. And it's key for system administrators and cybersecurity professionals to understand. It provides the framework for file and folder organization, access control, and data management.
+It's responsible for organizing, storing, and managing data on storage devices. Understanding it is key for system administrators and cybersecurity professionals. It provides the framework for file and folder organization, access control, and data management.
 
 Let's dive into these key concepts.
 
