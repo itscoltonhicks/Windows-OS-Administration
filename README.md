@@ -131,7 +131,7 @@ The ```This PC``` section used to be called ```My Computer``` in previous versio
 
 It contains attached drives, network shares, and storage devices.
 
-Now let's take a look at the local disk, also called the C: drive. It's the main drive for our Windows File System. View it as the "root" of our file system. 
+Now let's take a look at the local disk, also called the C: drive. It's the main drive for our Windows File System. Think of it as the "root" of our file system. 
 
 <img width="621" alt="Local Disk" src="https://github.com/user-attachments/assets/162c5689-98da-4d10-8fc7-a3a0fece3ea9">
 
@@ -167,9 +167,7 @@ Note that the address bar in File Explorer functions similarly to the address ba
 
 The main difference is we're using a backslash character ```\``` to separate folders and subfolders.
 
-Next let's learn to work with files in the File Explorer. I'll delete my test folder so we have a clean environment.
-
-We can create a file by right-clicking in the directory, hover over "new," and select "Text Document."
+Next let's learn to work with files in the File Explorer. I'll delete my test folder so we have a clean environment. We can create a file by right-clicking in the directory, hover over "new," and select "Text Document."
 
 <img width="619" alt="New Text Document" src="https://github.com/user-attachments/assets/b30c2e97-54d6-40db-9093-3557ef050f46">
 
@@ -181,7 +179,9 @@ Now it's been copied over there.
 
 <img width="621" alt="paste test file" src="https://github.com/user-attachments/assets/aa6a3bf8-084f-48c7-a12a-8526d2d63eac">
 
-We can also cut and paste a file. This deletes it from its original location and brings it somewhere else. 
+I'll delete the file from the ```Documents``` folder before moving forward.
+
+Next, we can cut and paste a file. This deletes it from its original location and brings it somewhere else. 
 
 Right-click the ```test file``` in the ```Colton > Desktop``` folder and select "Cut."
 
