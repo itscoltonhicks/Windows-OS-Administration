@@ -125,7 +125,7 @@ Observe the navigation pane on the left side.
 
 We can demonstrate this by pinning the ```This PC``` section to the Quick access section.
 
-<img width="620" alt="Pin to quick access" src="https://github.com/user-attachments/assets/dc418562-fac7-4d4d-9c37-175142114db3">
+<img width="620" alt="Pin to quick access" src="https://github.com/user-attachments/assets/96e614a5-f08f-4f43-bb25-0a7701e9604d">
 
 The ```This PC``` section used to be called ```My Computer``` in previous versions of Windows.
 
