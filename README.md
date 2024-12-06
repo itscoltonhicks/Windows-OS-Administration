@@ -1,4 +1,4 @@
-# Windows OS Fundamentals (Project Labs In Progress)
+# Windows OS Administration (Project Labs In Progress)
 # Table of Contents
 [Introduction](https://github.com/itscoltonhicks/Windows-OS-Fundamentals/blob/main/README.md#introduction)
 
