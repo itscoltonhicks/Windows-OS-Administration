@@ -233,7 +233,7 @@ A navigation menu appears to the left. This contains categories for various mana
 
 <img width="650" alt="Computer Management view" src="https://github.com/user-attachments/assets/35298c7f-02d3-43fa-b9fa-a8469d19c2ee">
 
-Expand Local Users and Groups by clicking on it. Then click on the Users folder to display a list of current users.
+Expand "Local Users and Groups" by clicking on it. Then click on the "Users" folder to display a list of current users.
 
 Notice how there are four different user accounts.
 
@@ -241,7 +241,7 @@ Notice how there are four different user accounts.
 
 Next let's create a new user on the local computer.
 
-Right-click in the empty space or directly on the Users folder. Then select "New User" to initiate the creation of a new user. 
+Right-click in the empty space or directly on the "Users" folder. Then select "New User" to initiate the creation of a new user. 
 
 <img width="733" alt="Create a new user" src="https://github.com/user-attachments/assets/14116ed7-d231-4b5d-b1c2-c9e2c20421fd">
 
@@ -265,7 +265,7 @@ Now we'll see different tabs for managing our new user.
 
 <img width="732" alt="ColtonTest Properties" src="https://github.com/user-attachments/assets/d1ce5898-ac25-4b3b-8642-f964d653180c">
 
-Since I'm using a basic Windows 10 VM, I'm only going seeing three tabs. I'd see a lot more if I was using an Enterprise Windows Server. For example, here's the same user properties window within an enterprise server:
+Since I'm using a basic Windows 10 VM, I'm only seeing three tabs. I'd see a lot more if I was using an Enterprise Windows Server. For example, here's the same user properties window within an enterprise server:
 
 <img width="525" alt="Enterprise server user properties" src="https://github.com/user-attachments/assets/39a6f207-95ce-48a8-9c75-fdc5a0db9b37">
 
@@ -314,11 +314,11 @@ In the field provided, type "Admin" and click "Check Names to validate the entry
 
 There doesn't seem to be a specific group called Admin. 
 
-However, this is a group called "Administrators", which we can find in the "Groups" folder.
+However, there is a group called "Administrators", which we can find in the "Groups" folder.
 
 <img width="732" alt="Administrators group" src="https://github.com/user-attachments/assets/a328b37c-a8f4-4907-b411-95f6a563dd8c">
 
-We'll type "Administrators" and click OK twice to add the user to this group. 
+Let's add that group to our ```ColtonTest``` user. We'll type "Administrators" and click OK twice to add the user to this group. Here's the end result.
 
 <img width="730" alt="Administrators added as a group" src="https://github.com/user-attachments/assets/4140f9bf-9021-4b61-85a1-037020e3d21e">
 
@@ -332,9 +332,11 @@ Close the properties window.
 
 Let's clean up our environment and delete the new user.
 
-Right-click on ```ColtonTest```, select "Delete," and click "Yes" to confirm.
+Right-click on ```ColtonTest``` and select "Delete." 
 
 <img width="730" alt="Delete user account" src="https://github.com/user-attachments/assets/c7829129-2ee4-41b2-ab72-d845bae1d520">
+
+When prompted, click "Yes" to confirm.
 
 We're done with the Computer Management window now, so we can close it. 
 
@@ -348,7 +350,9 @@ We can manage user accounts by using the ```net user``` command.
 
 Then we'll add specific flags or options depending on our goals. Let's start by adding a new user through the terminal:
 
-```net user AnotherColtonUser Password123! /add```
+```
+net user AnotherColtonUser Password123! /add
+```
 
 <img width="800" alt="Add user in powershell" src="https://github.com/user-attachments/assets/500a8d71-dfc4-4a19-8270-3fd9ab30495d">
 
@@ -364,7 +368,9 @@ Next we can update the password by using a similar command without the ```/add``
 
 Then just input a new password. For example:
 
-```net user AnotherColtonUser NewPassword123!```
+```
+net user AnotherColtonUser NewPassword12345!
+```
 
 <img width="537" alt="update password in powershell" src="https://github.com/user-attachments/assets/076a5d0d-e278-48d0-8b59-6e05f4647d95">
 
@@ -374,11 +380,13 @@ Quick command breakdown:
 - ```AnotherColtonUser```: The existing user account.
 - ```NewPassword12345!```: The new password. The computer already knows the user account exists. So typing in a new password will automatically update it.
 
-We can also specify whether or not we want to the account active (or disabled). 
+We can also specify whether or not we want the account active (or disabled). 
 
 Let's start by making sure it's active:
 
-```net user AnotherColtonUser /active:yes```
+```
+net user AnotherColtonUser /active:yes
+```
 
 <img width="392" alt="active user account command" src="https://github.com/user-attachments/assets/46d6b355-3350-40b2-9720-6ed9cb0ec04d">
 
@@ -390,7 +398,9 @@ Quick command breakdown:
 
 To disable the account, we'll use the same command with a tiny tweak:
 
-```net user AnotherColtonUser /active:no```
+```
+net user AnotherColtonUser /active:no
+```
 
 <img width="798" alt="disable user account in powershell" src="https://github.com/user-attachments/assets/d3a29fe1-0652-43cd-89f8-7ccbdb470248">
 
@@ -400,7 +410,9 @@ Finally, we'll delete the user from the command line.
 
 Here's the final command:
 
-```net user AnotherColtonUser /delete```
+```
+net user AnotherColtonUser /delete
+```
 
 <img width="938" alt="delete user account in powershell" src="https://github.com/user-attachments/assets/3ee39201-7392-4c11-a0ec-30c1b53d89a2">
 
