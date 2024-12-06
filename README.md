@@ -6,7 +6,7 @@
 
 [Lab #2: The Windows File System](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-2-the-windows-file-system)
 
-[Lab #3: Windows User Accounts and Permissions](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-3-windows-user-accounts-and-permissions)
+[Lab #3: Managing Windows User Accounts](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-3-managing-windows-user-accounts)
 
 # Introduction
 
@@ -217,7 +217,7 @@ Let's actually delete the file by opening up the Recycle Bin from the desktop, r
 
 <img width="750" alt="empty recycle bin" src="https://github.com/user-attachments/assets/ee403816-46c8-4d95-a843-289c398fdc29">
 
-# Lab #3: Windows User Accounts and Permissions
+# Lab #3: Managing Windows User Accounts
 
 In this lab we'll explore the concepts of managing user accounts on Windows.
 
