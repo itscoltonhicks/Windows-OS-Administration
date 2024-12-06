@@ -214,3 +214,199 @@ Our file isn't permanently deleted yet. It's just ready to be deleted in the Rec
 Let's actually delete the file by opening up the Recycle Bin from the desktop, right-clicking anywhere in the white space inside it, and selecting "Empty Recycle Bin."
 
 <img width="750" alt="empty recycle bin" src="https://github.com/user-attachments/assets/ee403816-46c8-4d95-a843-289c398fdc29">
+
+# Lab #3: Windows User Accounts and Permissions
+
+In this lab we'll explore the concepts of managing user accounts on Windows.
+
+For context, I'm using Windows 10. Now let's get started. We'll click on the Start Menu on the bottom left corner of the screen. 
+
+From here, we'll type in Computer Management and select it.
+
+<img width="750" alt="Selecting Computer Management" src="https://github.com/user-attachments/assets/c81d42ee-b131-45c6-b041-c194258799e6">
+
+This allows us to manage all the local computer settings for this endpoint. 
+
+A navigation menu appears to the left. This contains categories for various management options.
+
+<img width="650" alt="Computer Management view" src="https://github.com/user-attachments/assets/35298c7f-02d3-43fa-b9fa-a8469d19c2ee">
+
+Expand Local Users and Groups by clicking on it. Then click on the Users folder to display a list of current users.
+
+Notice how there are four different user accounts.
+
+<img width="735" alt="List of user accounts" src="https://github.com/user-attachments/assets/5d8bcf9d-9771-4d34-a314-cc7116264c1e">
+
+Next let's create a new user on the local computer.
+
+Right-click in the empty space or directly on the Users folder. Then select "New User" to initiate the creation of a new user. 
+
+<img width="733" alt="Create a new user" src="https://github.com/user-attachments/assets/14116ed7-d231-4b5d-b1c2-c9e2c20421fd">
+
+Now we'll need to fill in the user details—username, full name, and password.
+
+Let's also uncheck the checkbox for "User must change password at next logon." This prevents the mandatory password change on first login.
+
+<img width="734" alt="info for new user account" src="https://github.com/user-attachments/assets/d48f1531-a9e3-430f-afcf-95f0f67d2517">
+
+Once we click "Create," a new user will be created and appear on the list of users.
+
+<img width="732" alt="New account successfully created gui" src="https://github.com/user-attachments/assets/cbc73e5f-c210-4527-84f3-417f6d9922c5">
+
+We can look at the properties of our new user.
+
+This is where we can manage user settings and access. Double-click ```ColtonTest``` and select "Properties."
+
+<img width="732" alt="user account properties" src="https://github.com/user-attachments/assets/1d356105-1890-42f4-8fbb-54214fdac2c8">
+
+Now we'll see different tabs for managing our new user. 
+
+<img width="732" alt="ColtonTest Properties" src="https://github.com/user-attachments/assets/d1ce5898-ac25-4b3b-8642-f964d653180c">
+
+Since I'm using a basic Windows 10 VM, I'm only going seeing three tabs. I'd see a lot more if I was using an Enterprise Windows Server. For example, here's the same user properties window within an enterprise server:
+
+<img width="525" alt="Enterprise server user properties" src="https://github.com/user-attachments/assets/39a6f207-95ce-48a8-9c75-fdc5a0db9b37">
+
+Here's a brief description of each tab:
+
+- **General:** Set password restrictions and account controls. 
+- **Member Of:** Assign group permissions to the user and grant access to various resources.
+- **Profile:** Configure desktop settings and script paths to customize the user's environment.
+- **Environment:** Set environment variables that'll apply when the user logs in.
+- **Sessions:** View and manage active session settings for the user. 
+- **Dial-In:** Set permissions for remote access to the server.
+- **Remote Desktop Services Profile:** Configure settings for the user's remote desktop experience.
+- **Remote Control:** Set permissions for remote control of the user session.
+
+Click OK to exit the new user's properties.
+
+Next let's initiate a password change.
+
+Right-click on ```ColtonTest``` and click "Set Password." 
+
+<img width="733" alt="Set password" src="https://github.com/user-attachments/assets/61e9d10a-a83d-49f1-90c5-4b013bcded93">
+
+Click "Proceed" when the confirmation dialog pops up.
+
+<img width="733" alt="Proceed with password change" src="https://github.com/user-attachments/assets/e45e1225-da7b-4f2f-bced-642061507c9a">
+
+Then set a new password for the user, clicking OK when we're done.
+
+<img width="731" alt="Set new password" src="https://github.com/user-attachments/assets/e7df82a3-a546-429b-8e44-48814a0ae54e">
+
+We can also disable an account. 
+
+Right-click on ```ColtonTest``` again, go to "Properties," and check the "Account is disabled" checkbox. Then click "Apply" and "OK."
+
+<img width="734" alt="Disable user account" src="https://github.com/user-attachments/assets/b1745154-ffb3-4a74-9d85-fe0d6a4415c3">
+
+Next we'll modify group memberships. 
+
+Right-click on ```ColtonTest```, select "Properities," go to the "Member Of" tab, then click "Add."
+
+<img width="737" alt="Add user to group" src="https://github.com/user-attachments/assets/76325a3f-f4e9-4f21-94ab-96acb4515448">
+
+In the field provided, type "Admin" and click "Check Names to validate the entry.
+
+<img width="736" alt="admin name not found" src="https://github.com/user-attachments/assets/a3436f63-ca62-4fd6-b37d-f11825ff5ab7">
+
+There doesn't seem to be a specific group called Admin. 
+
+However, this is a group called "Administrators", which we can find in the "Groups" folder.
+
+<img width="732" alt="Administrators group" src="https://github.com/user-attachments/assets/a328b37c-a8f4-4907-b411-95f6a563dd8c">
+
+We'll type "Administrators" and click OK twice to add the user to this group. 
+
+<img width="730" alt="Administrators added as a group" src="https://github.com/user-attachments/assets/4140f9bf-9021-4b61-85a1-037020e3d21e">
+
+Then we'll just remove the user from the Administrators group, as we don't want it to have privileged access.
+
+Select the group name and click "Remove."
+
+<img width="731" alt="Remove group membership" src="https://github.com/user-attachments/assets/f176950a-e1ac-42cc-96d5-92bc557d2382">
+
+Close the properties window.
+
+Let's clean up our environment and delete the new user.
+
+Right-click on ```ColtonTest```, select "Delete," and click "Yes" to confirm.
+
+<img width="730" alt="Delete user account" src="https://github.com/user-attachments/assets/c7829129-2ee4-41b2-ab72-d845bae1d520">
+
+We're done with the Computer Management window now, so we can close it. 
+
+To finish this section, we'll work with user accounts over the terminal. So let's open up a PowerShell terminal in Windows. 
+
+This is a command-line interface where we can execute PowerShell commands and scripts, allowing us to interact with the operating system and automate tasks.
+
+<img width="750" alt="Powershell app" src="https://github.com/user-attachments/assets/55717182-e5a7-4d30-90d3-28718ec29bd8">
+
+We can manage user accounts by using the ```net user``` command. 
+
+Then we'll add specific flags or options depending on our goals. Let's start by adding a new user through the terminal:
+
+```net user AnotherColtonUser Password123! /add```
+
+<img width="800" alt="Add user in powershell" src="https://github.com/user-attachments/assets/500a8d71-dfc4-4a19-8270-3fd9ab30495d">
+
+Quick command breakdown:
+
+- ```net```: A built-in command line utility in Windows. Allows us to manage various network settings and functions.
+- ```user```: When following the ```net``` command, it specifies that we want to manage user accounts.
+- ```AnotherColtonUser```: The user account we want to add.
+- ```Password123!```: The password we want to associate with the user account.
+- ```/add```: The flag that specifies we want to add a user.
+
+Next we can update the password by using a similar command without the ```/add``` flag. 
+
+Then just input a new password. For example:
+
+```net user AnotherColtonUser NewPassword123!```
+
+<img width="537" alt="update password in powershell" src="https://github.com/user-attachments/assets/076a5d0d-e278-48d0-8b59-6e05f4647d95">
+
+Quick command breakdown:
+
+- ```net user```: The command for managing user accounts.
+- ```AnotherColtonUser```: The existing user account.
+- ```NewPassword12345!```: The new password. The computer already knows the user account exists. So typing in a new password will automatically update it.
+
+We can also specify whether or not we want to the account active (or disabled). 
+
+Let's start by making sure it's active:
+
+```net user AnotherColtonUser /active:yes```
+
+<img width="392" alt="active user account command" src="https://github.com/user-attachments/assets/46d6b355-3350-40b2-9720-6ed9cb0ec04d">
+
+Quick command breakdown:
+
+- ```net user```: The command for managing user accounts.
+- ```AnotherColtonUser```: The user account we want to modify.
+- ```/active:yes```: The ```/active``` flag specifies that we want to modify the active status of the user account. And the ```:yes``` gives is a value, indicating that we want it to be active.
+
+To disable the account, we'll use the same command with a tiny tweak:
+
+```net user AnotherColtonUser /active:no```
+
+<img width="798" alt="disable user account in powershell" src="https://github.com/user-attachments/assets/d3a29fe1-0652-43cd-89f8-7ccbdb470248">
+
+As you can see, we just gave the ```/active``` flag a value of ```no```. This disables the user account. We can check in the Computer Management GUI window to make sure it's disabled. Notice the "down arrow" on the user icon. This indicates it's disabled.
+
+Finally, we'll delete the user from the command line.
+
+Here's the final command:
+
+```net user AnotherColtonUser /delete```
+
+<img width="938" alt="delete user account in powershell" src="https://github.com/user-attachments/assets/3ee39201-7392-4c11-a0ec-30c1b53d89a2">
+
+Quick command breakdown:
+
+- ```net user```: The command for managing user accounts.
+- ```AnotherColtonUser```: The user account we're deleting.
+- ```/delete```: The flag specifying we're deleting the account.
+
+As we can see in the image, the ```AnotherColtonUser``` account is gone.
+
