@@ -6,6 +6,8 @@
 
 [Lab #2: The Windows File System](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-2-the-windows-file-system)
 
+[Lab #3: Windows User Accounts and Permissions](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-3-windows-user-accounts-and-permissions)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
