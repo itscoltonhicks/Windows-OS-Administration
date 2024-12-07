@@ -424,3 +424,143 @@ Quick command breakdown:
 
 As we can see in the image, the ```AnotherColtonUser``` account is gone.
 
+# Lab #4: Managing Windows User Permissions
+Next we'll dive deeper into Windows user permissions.
+
+We'll assign and modify user permissions. That way, we can control access to files and folders on the Windows OS. We'll do this in the GUI and CLI.
+
+Let's start in the GUI by opening up the File Explorer. 
+
+Navigate to the ```Documents``` folder by selecting it from the left-hand quick access sidebar.
+
+<img width="618" alt="Documents with lab folder" src="https://github.com/user-attachments/assets/ae45605f-6c7a-4cef-94ae-ec7745dbb215">
+
+I created a folder called "Lab Folder" to demonstrate the next steps. 
+
+Right-click on it to bring up a context menu. And from the available options, select "Properties," then the "Security" tab at the top.
+
+<img width="617" alt="Lab folder properties" src="https://github.com/user-attachments/assets/94654d15-3c4b-434f-b304-f287751f814d">
+
+We'll see a list of users or groups under "Group or user names." 
+
+These are groups or users that have permissions set for this folder. If we select one of them, we'll see the specific permissions for the folder in the box below.
+
+<img width="618" alt="3  Permissions for Colton" src="https://github.com/user-attachments/assets/921e3d77-2e3b-48ff-9757-1003e1fac73a">
+
+We can modify permissions by clicking the "Edit" button under the list of users or groups. 
+
+This opens up a new window where we can select a specific user or group. Then we can choose to "Allow" or "Deny" specific permissions—such as reading, writing, or full control of the folder.
+
+<img width="618" alt="4  Edit permissions gui" src="https://github.com/user-attachments/assets/222f9bbe-fcb1-4313-8a0b-10b9c805ee02">
+
+We can also grant permissions for a new group or user.
+
+Click the "Add" button in the permissions editing window. In a new window and in the field labeled "Enter the object names to select," type "Guest".
+
+The ```Guest``` user is a common account that is left on by default.
+
+<img width="618" alt="5  Add a new user for permissions" src="https://github.com/user-attachments/assets/58f81a13-c15a-4769-be0d-aca97a6d97fd">
+
+After entering the name, click the "Check Names" button to verify that the entered name corresponds to a recognized user or group. 
+
+It'll get underlined if it's valid. Click "OK."
+
+<img width="619" alt="6  Check names for guest user" src="https://github.com/user-attachments/assets/3ffd061e-0fc6-43b6-b85b-bbca3fed5f2d">
+
+Once that's done, click "Apply" and "OK" to grant permissions to the ```Guest``` user.
+
+There are also advanced settings we can configure for permissions. 
+
+Click on the "Advanced" button located at the bottom-right of the security tab.
+
+<img width="618" alt="7  Advanced permissions settings" src="https://github.com/user-attachments/assets/7882d1e8-78e7-4265-8e92-17b9a65a58e4">
+
+Here we can manage inheritance settings.
+
+<img width="619" alt="8  Advanced security settings for lab folder" src="https://github.com/user-attachments/assets/78f21b4d-2e30-49cc-842d-a13ef558a149">
+
+Inheritance means that all sub-folders and files will follow the security permissions of its parent folder. 
+
+So for our example, when inheritance is enabled for our ```Documents``` folder, every sub-folder and file nested within it will have the same permissions. 
+
+Let's illustrate this by creating a new folder within our parent ```Lab Folder```folder and display the security permissions.
+
+<img width="617" alt="9  Guest user inheriting permissions" src="https://github.com/user-attachments/assets/7545b77d-67f9-47ef-9dda-7670f127f5e1">
+
+Notice how they're the same. In our example, the red "X" on the user's icon indicates that the user's permissions have been explicitly denied and will override the inherited permissions. But it's useful to understand the underlying mechanism for the sake of the lab.
+
+Inheritance can save us a lot of time. However, if the parent folder's permissions are misconfigured, this can cause a lot of issues.
+
+We can also "Disable Inheritance" by clicking the button to make sure the parent folder's permissions doesn't influence our existing folder.
+
+Let's do that with our initial ```Lab Folder``` folder.
+
+<img width="617" alt="10  Disable inheritance" src="https://github.com/user-attachments/assets/a6c6a982-4614-433a-8d57-4ce5f7939e96">
+
+Now let's clean our environment by closing out the windows and removing the Guest user from having permissions.
+
+Select the appropriate account and click "Remove."
+
+<img width="619" alt="11  Remove user from having folder permissions" src="https://github.com/user-attachments/assets/7e3ddb62-8559-4414-b9f4-7109fc6f0291">
+
+We'll finish this section on the command line. Hop over into the "Command Prompt" terminal, also referred to as the ```CMD``` utility. We could technically use Powershell. But the ```CMD``` terminal allows us to use simple and quick commands for basic administrative tasks. 
+
+Type in "CMD" in the search box and select it.
+
+<img width="750" alt="12  Open Command prompt" src="https://github.com/user-attachments/assets/b0994c41-a0b4-40ad-9217-a8d2e07084e1">
+
+First we need to navigate to the ```Documents``` folder. This is where our ```Lab Folder``` folder is located. 
+
+We'll do this by using a command called ```cd``` to "change directories." 
+
+```
+cd Documents
+```
+
+<img width="406" alt="13  Change directories" src="https://github.com/user-attachments/assets/8f37db40-21cf-4b1a-bc55-89200736a7ab">
+
+Notice that we've changed our existing directory to the ```Documents``` folder. Now we can run commands to this specific location on disk.
+
+Next we'll run a command called ```icacls```.
+
+It stands for "integrity control access control list. It allows us to manage access control lists and modify permissions.
+
+Let's give the ```Guest``` user "read" permissions to the ```Lab Folder``` folder:
+
+```
+icacls ".\Lab Folder" /grant Guest:(R)
+```
+
+<img width="800" alt="14  Grant Guest read access via cmd" src="https://github.com/user-attachments/assets/1acf97f4-67fe-4f33-be3a-c5c1bc732864">
+
+Quick command breakdown:
+
+- ```icacls```: This command allows us to manage and modify permissions. 
+- ```".\{foldername}"```: This specifies which folder we want to modify permissions for. The ```.\``` means the "current directory."
+- ```/grant```: This flag indicates we want to "grant" permissions to this folder.
+- ```Guest:(R)```: The ```Guest``` value specifies which user or group will be granted access to our ```folder``` folder. And the ```:(R)``` value means we want the ```Guest``` user to have "read" permissions.
+
+Observe how when we open up the security permissions in the GUI for our ```Lab Folder```folder, we'll see that the ```Guest``` account has been granted "read" access.
+
+We can also deny access on the command line. 
+
+We'll use the same command—except this time, we'll use the ```/deny``` flag:
+
+```
+icacls ".\Lab Folder" /deny Guest:(R)
+```
+
+<img width="958" alt="15  Deny guest permissions" src="https://github.com/user-attachments/assets/31dfede5-b34b-43b1-b3ac-942e4441016a">
+
+If we go back to our security permissions in the GUI, we'll see that the ```Guest``` user no longer has "read" access.
+
+We can also completely remove the ```Guest``` user from having access to the folder. 
+
+We'll use the same command with a different flag:
+
+```
+icacls ".\Lab Folder" /remove Guest
+```
+<img width="800" alt="16  Remove Guest permissions" src="https://github.com/user-attachments/assets/1292eddd-e76b-46f8-a150-ff3dcec7cebc">
+
+Now our ```Guest``` user has been completely removed from having access to our ```Lab Folder``` folder.
