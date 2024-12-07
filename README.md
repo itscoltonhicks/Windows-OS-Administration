@@ -437,7 +437,7 @@ Navigate to the ```Documents``` folder by selecting it from the left-hand quick 
 
 <img width="618" alt="Documents with lab folder" src="https://github.com/user-attachments/assets/ae45605f-6c7a-4cef-94ae-ec7745dbb215">
 
-I created a folder called "Lab Folder" to demonstrate the next steps. 
+I created a folder called ```Lab Folder``` to demonstrate the next steps. 
 
 Right-click on it to bring up a context menu. And from the available options, select "Properties," then the "Security" tab at the top.
 
@@ -487,13 +487,11 @@ So for our example, when inheritance is enabled for our ```Documents``` folder, 
 
 Let's illustrate this by creating a new folder within our parent ```Lab Folder```folder and display the security permissions.
 
-<img width="617" alt="9  Guest user inheriting permissions" src="https://github.com/user-attachments/assets/7545b77d-67f9-47ef-9dda-7670f127f5e1">
+<img width="617" alt="Inherited Permissions Folder with guest permissions inherited" src="https://github.com/user-attachments/assets/e50fafd0-db5e-44cc-a041-54fd08ee9a9c">
 
-Notice how they're the same. In our example, the red "X" on the user's icon indicates that the user's permissions have been explicitly denied and will override the inherited permissions. But it's useful to understand the underlying mechanism for the sake of the lab.
+Notice how the new folder inherited the same permissions from its parent folder.
 
-Inheritance can save us a lot of time. However, if the parent folder's permissions are misconfigured, this can cause a lot of issues.
-
-We can also "Disable Inheritance" by clicking the button to make sure the parent folder's permissions doesn't influence our existing folder.
+Inheritance can save us a lot of time. However, if the parent folder's permissions are misconfigured, this can cause a lot of issues. We can also "Disable Inheritance" by clicking the button to make sure the parent folder's permissions doesn't influence our existing folder.
 
 Let's do that with our initial ```Lab Folder``` folder.
 
@@ -503,7 +501,7 @@ Now let's clean our environment by closing out the windows and removing the Gues
 
 Select the appropriate account and click "Remove."
 
-<img width="619" alt="11  Remove user from having folder permissions" src="https://github.com/user-attachments/assets/7e3ddb62-8559-4414-b9f4-7109fc6f0291">
+<img width="614" alt="Remove guest user" src="https://github.com/user-attachments/assets/26956b3c-901b-49db-a8ad-a3bd431c00ea">
 
 We'll finish this section on the command line. Hop over into the "Command Prompt" terminal, also referred to as the ```CMD``` utility. We could technically use Powershell. But the ```CMD``` terminal allows us to use simple and quick commands for basic administrative tasks. 
 
