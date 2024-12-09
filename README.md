@@ -602,7 +602,7 @@ This section provides details on the CPU, Memory, Disk, and Network usage for ea
 
 This is a good place to troubleshoot why a computer is running slow or if there are programs running that shouldn't be. Some of these running processes have a ```>``` symbol on the left-hand side of the process name. 
 
-If we expand it, we'll get more details about that specific process—sub-procesess, services, or threads associated with the main process.
+If we expand it, we'll get more details about that specific process—sub-processes, services, or threads associated with the main process.
 
 <img width="563" alt="5  Sub-processes in task manager" src="https://github.com/user-attachments/assets/85ecd7e3-93e7-411a-888c-eef20912db48">
 
@@ -646,7 +646,7 @@ This provides real-time resource usage and consumption of running processes.
 
 <img width="800" alt="11  Open resource monitor" src="https://github.com/user-attachments/assets/438d049c-4a5c-4ebb-9dff-d2b27a8baeed">
 
-Next we'll observe the relatioship between processes and services by navigating to the "Details" tab.
+Next we'll observe the relationship between processes and services by navigating to the "Details" tab.
 
 Understanding how services are linked to processes are important for troubleshooting or inspecting system behavior. It gives us a baseline of what's normal. And if we can observe abnormal behavior in relationship to this baseline, we'll better detect system issues or security incidents.
 
@@ -685,3 +685,83 @@ We'll be able to see which users started each process. For instance, notice that
 <img width="550" alt="16  Users tab in task manager" src="https://github.com/user-attachments/assets/1ea2d3de-6e27-4061-90c7-043c1c9c9dea">
 
 This gives us useful information about how a process is running and the permissions associated with it. 
+
+# Lab #6: Exploring Windows Services
+
+Windows services are unique processes. 
+
+Understanding how they work is crucial for system administration and IT security. These services are responsible for system stability and performance, ensuring the seamless operation of various applications and the Windows system as a whole. They're often configured to run without user interaction and automatically in the background.
+
+In this lab, we'll explore Windows services in the GUI. 
+
+One way to access the "Services" application in Windows is by using the "Run" command.
+
+We can basically run an executable file or "binary" from this location. In the search box, search for "Run" and type in ```services.msc```.
+
+<img width="750" alt="1  Run services" src="https://github.com/user-attachments/assets/33b9a3a4-5181-4fdb-9874-6f219e48df69">
+
+The "Services" console will pop up. 
+
+It'll display different services that are configured to run at various points in time within our operation system. Some services can be ran manually, automatically, or with a trigger. 
+
+<img width="800" alt="2  Services console" src="https://github.com/user-attachments/assets/67e8ce1c-857b-425f-9522-5ae6b9d2fabc">
+
+We can also change the state of these services from the console.
+
+Let's try starting a service.
+
+I'll right-click ```Bluetooth Support Service``` and select "Start."
+
+<img width="800" alt="3  Start bluetooth service" src="https://github.com/user-attachments/assets/1b646c0e-c038-4465-8722-b1621bd780bf">
+
+Now its running. 
+
+<img width="800" alt="4  Bluetooth service is running" src="https://github.com/user-attachments/assets/6d947c85-19f6-4262-aebf-85153f2afa06">
+
+If we wanted to restart a service that's already running, we can right-click it and select "Restart."
+
+<img width="800" alt="5  Restart a service" src="https://github.com/user-attachments/assets/cc9a9b7f-e5ed-4f23-a3e1-8d110ae2a9b3">
+
+We can then stop it by right-clicking ```Bluetooth Support Service``` again and selecting "Stop."
+
+<img width="800" alt="6  Stop the bluetooth service" src="https://github.com/user-attachments/assets/c64ecbf2-1ef7-4386-9abb-d9b68edc01f8">
+
+These are common actions to take when troubleshooting services.. 
+
+Next let's explore how to configure services. 
+
+Right-click the ```Bluetooth Support Service``` and select "Properties."
+
+<img width="800" alt="7  Selecting bluetooth service properties" src="https://github.com/user-attachments/assets/f433b21e-f0fa-44b1-a675-a6d09632fdef">
+
+Observe all the configuration options we can change.
+
+For example, we could change the startup type. Automatic means we can start the service automatically when the system boots up. Automatic (Delayed Start) means that the service will start after the previously defined "automatic services" have started. Manual means the service only starts when explicitly requested by a user or program. 
+
+And disabled means the service will be prevented from starting (even if requested).
+
+<img width="800" alt="8  Configuration changes to bluetooth service" src="https://github.com/user-attachments/assets/471d55d1-5c90-4d90-8098-721529eed4ce">
+
+Also take note of the "Log On" tab.
+
+Services don't necessarily need to run with user interaction. But they still require an account to access the resources they need. For example, the Bluetooth service is using a "Local Service", which is a built-in service account with limited permissions. 
+
+<img width="800" alt="9  Log on tab for bluetooth service" src="https://github.com/user-attachments/assets/bb2cddbf-8791-4e81-903a-d7650c7620ce">
+
+This reduces security risks by creating a level of isolation. We wouldn't want one service account running multiple services at once. 
+
+If that one service account got compromised, then we'd be in trouble. 
+
+Now let's go to the "Recovery" tab.
+
+<img width="800" alt="10  Recovery tab for bluetooth service" src="https://github.com/user-attachments/assets/4463d397-445d-4557-b4f9-c95bc2cd4d5b">
+
+This section allows us, as administrators, to customize how Windows OS responds when a service fails. 
+
+It's important because we can automate recovery steps, making sure the availability of important services are optimized. It reduces manual intervention and improves service reliability. We can specify actions for the first failure, the second failure, and subsequent failures. 
+
+For instance, our Bluetooth service is currently set to "Restart the Service" for both the first and second failures. It'll also "Take No Action" after subsequent failures.
+
+<img width="800" alt="11  Recovery configurations" src="https://github.com/user-attachments/assets/ff083d30-a23b-4a2f-bea1-c751158fc530">
+
+Service recovery steps will vary based on business needs, and we can customize configuration settings accordingly.
