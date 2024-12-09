@@ -628,7 +628,7 @@ All we need to do is right-click a process and select "End Task." Let's do this 
 
 <img width="799" alt="8  End task for notepad" src="https://github.com/user-attachments/assets/fe00264a-ec9f-454b-8b2c-63e0a32e6039">
 
-Once we end the task, observe how the Task Manager window disappears. There's no longer an active instance of Task Manager running on the system.
+Once we end the task, observe how the Task Manager window disappears. There's no longer an active instance of ```Notepad``` running on the system.
 
 <img width="800" alt="9  Notepad disappears" src="https://github.com/user-attachments/assets/1163fbab-f15c-4b9a-9070-bf1658a4d2cb">
 
