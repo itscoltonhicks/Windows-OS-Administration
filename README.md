@@ -728,7 +728,7 @@ We can then stop it by right-clicking ```Bluetooth Support Service``` again and 
 
 <img width="800" alt="6  Stop the bluetooth service" src="https://github.com/user-attachments/assets/c64ecbf2-1ef7-4386-9abb-d9b68edc01f8">
 
-These are common actions to take when troubleshooting services.. 
+These are common actions we can to take when troubleshooting services.
 
 Next let's explore how to configure services. 
 
