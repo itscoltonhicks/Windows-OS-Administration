@@ -12,6 +12,8 @@
 
 [Lab #5: Exploring Windows Processes](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-5-exploring-windows-processes)
 
+[Lab #6: Exploring Windows Services](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-6-exploring-windows-services)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
