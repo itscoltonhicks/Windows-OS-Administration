@@ -680,7 +680,7 @@ The ```SgrmBroker``` process requires a service called ```System Guard Runtime M
 
 Finally, let's look at the "Users" tab in Task Manager.
 
-We'll be able to see which users started each process. For instance, notice that the ```user name``` user is consuming about```process data``` at this given point in time.
+We'll be able to see which users started each process. For instance, notice that the ```Colton``` user is consuming about 24% of memory at this given point in time.
 
 <img width="550" alt="16  Users tab in task manager" src="https://github.com/user-attachments/assets/1ea2d3de-6e27-4061-90c7-043c1c9c9dea">
 
