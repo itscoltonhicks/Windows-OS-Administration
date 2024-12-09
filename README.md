@@ -10,7 +10,7 @@
 
 [Lab #4: Managing Windows User Permissions](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-4-managing-windows-user-permissions)
 
-[Lab #5: Exploring Windows Processes]
+[Lab #5: Exploring Windows Processes](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-5-exploring-windows-processes)
 
 # Introduction
 
