@@ -10,6 +10,8 @@
 
 [Lab #4: Managing Windows User Permissions](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-4-managing-windows-user-permissions)
 
+[Lab #5: Exploring Windows Processes]
+
 # Introduction
 
 Cybersecurity is a subset of IT.
@@ -564,3 +566,122 @@ icacls ".\Lab Folder" /remove Guest
 <img width="800" alt="16  Remove Guest permissions" src="https://github.com/user-attachments/assets/1292eddd-e76b-46f8-a150-ff3dcec7cebc">
 
 Now our ```Guest``` user has been completely removed from having access to our ```Lab Folder``` folder.
+
+# Lab #5: Exploring Windows Processes
+There's a lot going on under the hood of Windows OS. 
+
+And "running processes" are an important facet of the operating system. Proper process management ensures Windows OS remains efficient, secure, and responsive. Inspecting running processes can help identify system issues or security threats.
+
+In this lab, we're going to view and manage running processes with the Windows Task Manager.
+
+Let's get started.
+
+Open up the Task Manager, either through the task bar or search box.
+
+<img width="750" alt="1  Open Task Manager" src="https://github.com/user-attachments/assets/7eb4623b-3417-4871-acaa-20417f883990">
+
+This will give us details about what's happening under the hood of our OS with running processes. 
+
+<img width="498" alt="2  View of task manager" src="https://github.com/user-attachments/assets/a9772723-eb34-4100-9121-cc24c10f3468">
+
+In Windows OS, a "process" is an instance of a program that's executing. 
+
+We can illustrate this by opening up ```Notepad``` and observing what happens in the Task Manager.
+
+<img width="750" alt="3  Notepad as an active instance" src="https://github.com/user-attachments/assets/e0e92291-471e-42ea-8cea-5a7fa40a1509">
+
+We'll see that there's an "active instance" of the ```Notepad``` program running.
+
+Now let's explore the Task Manager itself.
+
+We're currently under the "Processes" tab of the Task Manager. 
+
+<img width="561" alt="4  Task manager processes" src="https://github.com/user-attachments/assets/28383a45-77f4-4665-bbe4-99d37500b288">
+
+This section provides details on the CPU, Memory, Disk, and Network usage for each process.
+
+This is a good place to troubleshoot why a computer is running slow or if there are programs running that shouldn't be. Some of these running processes have a ```>``` symbol on the left-hand side of the process name. 
+
+If we expand it, we'll get more details about that specific process—sub-procesess, services, or threads associated with the main process.
+
+<img width="563" alt="5  Sub-processes in task manager" src="https://github.com/user-attachments/assets/85ecd7e3-93e7-411a-888c-eef20912db48">
+
+We can also organize and sort processes by CPU, Memory, Disk, or Network usage. 
+
+For instance, if I click the "Memory" column, my processes will get sorted by the amount of memory being allocated to running it. 
+
+<img width="560" alt="6  Sort processes by memory" src="https://github.com/user-attachments/assets/b0fc2370-0ff8-4ce4-9e33-064390eb4f82">
+
+This is helpful if we want to quickly see how processes are interacting with system resources.
+
+We can get even more granular by selecting the "Details" tab in Task Manager. 
+
+This provides more context for each process, like the Process ID (PID) and User name. The PID is useful for troubleshooting an issue. And the User name will tell us who the owner is for that specific process, which gives us useful information when investigating system issues.
+
+<img width="563" alt="7  Details tab in task manager" src="https://github.com/user-attachments/assets/07f2ff1a-e2ee-4306-86ea-4168a110285c">
+
+If the "Processes" tab doesn't provide us enough information, the "Details" tab is the next best place to go within Task Manager.
+
+Next we'll end a process directly in Task Manager. 
+
+All we need to do is right-click a process and select "End Task." Let's do this for the ```Notepad``` process.
+
+<img width="799" alt="8  End task for notepad" src="https://github.com/user-attachments/assets/fe00264a-ec9f-454b-8b2c-63e0a32e6039">
+
+Once we end the task, observe how the Task Manager window disappears. There's no longer an active instance of Task Manager running on the system.
+
+<img width="800" alt="9  Notepad disappears" src="https://github.com/user-attachments/assets/1163fbab-f15c-4b9a-9070-bf1658a4d2cb">
+
+Now we'll open Task Manager again and look at the "Performance" tab.
+
+This gives us a graphical representation of CPU, Memory, Disk, and Network usage of the system. 
+
+<img width="496" alt="10  Performance tab in Task Manager" src="https://github.com/user-attachments/assets/7751fae1-2d7b-4301-bf9f-8fad12085fd0">
+
+It doesn't break things down by each process. But it can give us a good overall visual of system performance on our Windows machine. 
+
+Now select the "Resource Monitor" view at the bottom of the window.
+
+This provides real-time resource usage and consumption of running processes. 
+
+<img width="800" alt="11  Open resource monitor" src="https://github.com/user-attachments/assets/438d049c-4a5c-4ebb-9dff-d2b27a8baeed">
+
+Next we'll observe the relatioship between processes and services by navigating to the "Details" tab.
+
+Understanding how services are linked to processes are important for troubleshooting or inspecting system behavior. It gives us a baseline of what's normal. And if we can observe abnormal behavior in relationship to this baseline, we'll better detect system issues or security incidents.
+
+It makes us better detectives.
+
+If we want to see which service is linked to a process, right-click on a process and select "Go to Services(s)." 
+
+We'll do this with the ```Task Manager``` process.
+
+<img width="960" alt="12  Go to services for task manager itself" src="https://github.com/user-attachments/assets/8e2de0ea-890a-457f-8b03-0bc81b41f424">
+
+Notice how there's no service linked to the Task Manager.
+
+<img width="800" alt="13  No services for task manager" src="https://github.com/user-attachments/assets/551f47ba-c044-49fe-9f59-a0e9043fee29">
+
+To understand why, it's important to know that a service is a program that runs in the background. It typically does this without direct user interaction. And it's designed to support other processes so they reliably work. For example, antivirus software uses a service to scan files constantly.
+
+However, Task Manager operates as a standalone process and doesn't need a service to support its job. 
+
+Since background services require system resources to run, Task Manager is designed to function without one so the computer is more efficient.
+
+Let's select another process to find its associated service. Let's try the ```SgrmBroker.exe``` process.
+
+<img width="550" alt="14  go to service for SgrmBroker exe" src="https://github.com/user-attachments/assets/ea429dfe-f888-4ffb-b7fd-cfad0240cca7">
+
+Now we'll see the service that supports this process.
+
+The ```SgrmBroker``` process requires a service called ```System Guard Runtime Monitor Broker``` to run. 
+
+<img width="550" alt="15  Service supporting SgrmBroker process" src="https://github.com/user-attachments/assets/de753ee8-f4c2-4157-9737-cb1ae641452c">
+
+Finally, let's look at the "Users" tab in Task Manager.
+
+We'll be able to see which users started each process. For instance, notice that the ```user name``` user is consuming about```process data``` at this given point in time.
+
+<img width="550" alt="16  Users tab in task manager" src="https://github.com/user-attachments/assets/1ea2d3de-6e27-4061-90c7-043c1c9c9dea">
+
+This gives us useful information about how a process is running and the permissions associated with it. 
