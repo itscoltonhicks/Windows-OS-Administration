@@ -776,7 +776,7 @@ Scheduled tasks allow us to execute tasks without user interaction at predetermi
 
 This is useful for system maintenance, data backups, or running scripts without manual intervention. It's like setting an alarm. Except in Windows, it automates tasks at predefined intervals. 
 
-Let's cover how to create, modify, and managed scheduled tasks.
+Let's cover how to create, modify, and manage scheduled tasks.
 
 We'll start by opening up the Task Scheduler application using the ```run``` command window.
 
