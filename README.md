@@ -14,6 +14,8 @@
 
 [Lab #6: Exploring Windows Services](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-6-exploring-windows-services)
 
+[Lab #7: Working with Scheduled Tasks](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-7-working-with-scheduled-tasks)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
@@ -798,7 +800,7 @@ If we expand the ```Task Scheduler (Local) > Task Scheduler Library > Microsoft 
 
 Now let's make our own task. 
 
-I'm going to configure ```Notepad``` to open up automicatically when I log onto my computer.  
+I'm going to configure ```Notepad``` to open up automatically when I log onto my computer.  
 
 Select the "Create Basic Task..." option in the right pane.
 
@@ -876,7 +878,7 @@ Pretty easy to find.
 
 Now let's do a bit of task administration.
 
-To start, select "Display All Running Tasks" on the right pane. Our ```test task``` will appear. We can "End Task." 
+To start, select "Display All Running Tasks" on the right pane. Our test task will appear. We can "End Task." 
 
 This will end or remove the active instance of ```Notepad``` that's currently running on the system.
 
