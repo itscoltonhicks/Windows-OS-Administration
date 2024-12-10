@@ -767,3 +767,167 @@ For instance, our Bluetooth service is currently set to "Restart the Service" fo
 <img width="800" alt="11  Recovery configurations" src="https://github.com/user-attachments/assets/ff083d30-a23b-4a2f-bea1-c751158fc530">
 
 Service recovery steps will vary based on business needs, and we can customize configuration settings accordingly.
+
+# Lab #7: Working with Scheduled Tasks
+
+Scheduled tasks allow us to execute tasks without user interaction at predetermined times. 
+
+This is useful for system maintenance, data backups, or running scripts without manual intervention. It's like setting an alarm. Except in Windows, it automates tasks at predefined intervals. 
+
+Let's cover how to create, modify, and managed scheduled tasks.
+
+We'll start by opening up the Task Scheduler application using the ```run``` command window.
+
+Then run ```taskschd.msc```.
+
+<img width="750" alt="1  Run task scheduler" src="https://github.com/user-attachments/assets/08b2040c-f061-4255-849a-0861297c56e0">
+
+It might take a few moments to open up.
+
+Once opened, the Task Scheduler GUI gives us access to scheduled tasks. We can create and manage them. And we can use time (or certain events) to trigger an application or script to run. 
+
+We can see some examples in the "Task Schedule Library (local)." 
+
+<img width="800" alt="2  Example of active scheduled tasks" src="https://github.com/user-attachments/assets/905c5991-a921-43bd-b088-fc622bbabe0b">
+
+These are all active tasks that are currently enabled on the local Windows machine.
+
+If we expand the ```Task Scheduler (Local) > Task Scheduler Library > Microsoft > Windows``` folder on the left-hand pane, we'll be able to see the various scheduled tasks separated by different folders. 
+
+<img width="800" alt="3  Left hand pane view of scheduled tasks" src="https://github.com/user-attachments/assets/fc93788b-c149-4945-bf9d-3448f5df6ba2">
+
+Now let's make our own task. 
+
+I'm going to configure ```Notepad``` to open up automicatically when I log onto my computer.  
+
+Select the "Create Basic Task..." option in the right pane.
+
+<img width="800" alt="4  Create basic task" src="https://github.com/user-attachments/assets/c6fe5ac8-92d3-4f54-8645-15daf5567884">
+
+A task wizard will pop up, guiding us through the task creation process.
+
+We'll name it "Test Task (Notepad)" and select "Next."
+
+<img width="800" alt="5  Name scheduled task" src="https://github.com/user-attachments/assets/c751234b-dd3c-485a-962f-9e19b85aa092">
+
+Next we'll give the task a trigger. 
+
+I'll choose "When I log on." 
+
+<img width="800" alt="6  Task trigger" src="https://github.com/user-attachments/assets/ad08b050-2424-438f-abda-c6c66dfea150">
+
+Now we need to choose an action. 
+
+We'll "Start a program."
+
+<img width="800" alt="7  Task action" src="https://github.com/user-attachments/assets/1fd50a28-54fa-471f-9b26-0da4bfc70dc1">
+
+At this point, we need to specify the program we'd like to start when we log on.
+
+<img width="800" alt="8  Need to start a program" src="https://github.com/user-attachments/assets/8a6dfad3-5169-40cd-9bdb-dd1525a37de9">
+
+I'm going to choose ```Notepad``` for our example. So to do this, we need to find where the executable or binary file lives. I'm going to open up ```Notepad```, use Task Manager to find the location of the binary file, and use it to specify the program for our scheduled task. 
+
+First open up ```Notepad```.
+
+<img width="800" alt="9  Open up notepad" src="https://github.com/user-attachments/assets/afa0417e-8d40-413f-b24f-342b903b4948">
+
+Now open up Task Manager. 
+
+Find the ```Notepad``` process we activated. Right-click it and select "Properties." 
+
+Here we'll find the location of where the binary lives on disk.
+
+<img width="800" alt="10  Locate notepad using task manager properties" src="https://github.com/user-attachments/assets/cb48c7ae-1cde-4f62-bb66-a487a7e9bf0c">
+
+Next we'll copy/paste that location into the address bar within the "Create Basic Task Wizard." 
+
+Scroll down to find the executable file and "Open it." 
+
+<img width="800" alt="11  Select notepad binary file" src="https://github.com/user-attachments/assets/3f831d9d-e902-4335-af6b-561e632c424d">
+
+Notice how our file has an ```.exe``` extension. This indicates it's a binary file.
+
+<img width="800" alt="12  finish finding exe file for scheduled task" src="https://github.com/user-attachments/assets/7ac16088-eb92-4dc7-86e5-f646a143dd37">
+
+Once we click "Next", we can review the task and then confirm. Click "Finish."
+
+<img width="800" alt="13  Finish creating scheduled task" src="https://github.com/user-attachments/assets/ba860776-4e47-43a9-a9af-d3c628caf79d">
+
+Our scheduled task has been created. 
+
+Let's restart our computer to see the scheduled task in action.
+
+<img width="750" alt="14  Restarting computer" src="https://github.com/user-attachments/assets/c345b1d6-2bcc-4cd0-be17-16d344092461">
+
+When we log back on, ```Notepad``` will automatically pop up.
+
+<img width="750" alt="15  Notepad opens upon logon" src="https://github.com/user-attachments/assets/71c3620a-cf3a-4ffe-9985-0c901952dfc0">
+
+Next we'll review where this scheduled task lives within the Task Scheduler. 
+
+Open up Task Scheduler again.
+
+On the bottom pane, we can scroll through the active tasks and find our newly created one.
+
+<img width="800" alt="16  Finding test task in Task Scheduler" src="https://github.com/user-attachments/assets/d9b1b15a-f071-43cf-8e95-6ddc11c3bde2">
+
+Pretty easy to find.
+
+Now let's do a bit of task administration.
+
+To start, select "Display All Running Tasks" on the right pane. Our ```test task``` will appear. We can "End Task." 
+
+This will end or remove the active instance of ```Notepad``` that's currently running on the system.
+
+<img width="800" alt="17  View all running tasks" src="https://github.com/user-attachments/assets/d87ab35e-89a9-42bc-8bfa-3d855b09308c">
+
+Notice how the ```Notepad``` process has been ended. The window is gone.
+
+<img width="800" alt="18  notepad is gone" src="https://github.com/user-attachments/assets/b8ebf61f-8763-4664-9c9b-90a3ff07da43">
+
+Now let's get a more granular view of ```Test Task (Notepad)``` by double-clicking it.
+
+<img width="800" alt="19  double click test task" src="https://github.com/user-attachments/assets/a5c416da-17eb-4b66-b3e4-06815010d4ba">
+
+Now we'll see a window where we can view more specific configurations of the task itself. 
+
+<img width="800" alt="20  Granular view of test task" src="https://github.com/user-attachments/assets/39df2999-307e-4ddc-b49e-426f3e48190a">
+
+If we wanted to actually modify the task, we'd need to select the "Properties" item on the right pane.
+
+<img width="800" alt="21  Properties view in Task Scheduler" src="https://github.com/user-attachments/assets/4c5b4d2e-f4df-4bfc-b305-3c6e91130fe6">
+
+There are a few more useful items to go over.
+
+We can disable the task so that ```Notepad``` no longer runs when I log on.
+
+<img width="800" alt="22  Disable test task" src="https://github.com/user-attachments/assets/3164ebca-84d8-492a-8296-587bc8d97e09">
+
+Sometimes we'll want to test if the task is working properly.
+
+We can accomplish this by selecting the "Run" item on the right pane. For our task, this will open up an instance of ```Notepad```.
+
+<img width="800" alt="23  Run scheduled task for testing purposes" src="https://github.com/user-attachments/assets/6c0488de-ef9b-482b-9641-3a706b10085f">
+
+Now let's say we wanted to build and develop the task in a safe environment. And once we're happy with it, we can import it into the desired Windows machine.
+
+We can accomplish this by exporting the task from our test environment.
+
+<img width="800" alt="24  Export test task" src="https://github.com/user-attachments/assets/0f444ca4-6577-4611-ae22-d0e8bc7fd41b">
+
+Now we can import it into our desired Windows machine.
+
+To illustrate this, I'll delete ```Test Task (Notepad)``` in our environment.
+
+Once that's done, I'll now import the file we just exported.
+
+<img width="800" alt="25  Import test task" src="https://github.com/user-attachments/assets/85cd3715-f023-485b-aed9-4a5bba5f2baf">
+
+We'll be presented with a popup menu to review the task and do some final configurations, if needed.
+
+<img width="800" alt="26  Review scheduled task for import" src="https://github.com/user-attachments/assets/05395dd9-0f45-4523-a594-9942f0d7356f">
+
+Now our task is back in our environment and ready to go.
+
+<img width="800" alt="27  successful import of scheduled task" src="https://github.com/user-attachments/assets/aa9141df-ef64-41c8-8266-b6e95033afcd">
