@@ -912,7 +912,7 @@ We can accomplish this by selecting the "Run" item on the right pane. For our ta
 
 Now let's say we wanted to build and develop the task in a safe environment. And once we're happy with it, we can import it into the desired Windows machine.
 
-We can accomplish this by exporting the task from our test environment.
+We can accomplish this by exporting the task from our test environment. [Here's the file if you want to review.](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/Project-Files/Test%20Task%20(Notepad).xml)
 
 <img width="800" alt="24  Export test task" src="https://github.com/user-attachments/assets/0f444ca4-6577-4611-ae22-d0e8bc7fd41b">
 
