@@ -788,7 +788,7 @@ It might take a few moments to open up.
 
 Once opened, the Task Scheduler GUI gives us access to scheduled tasks. We can create and manage them. And we can use time (or certain events) to trigger an application or script to run. 
 
-We can see some examples in the "Task Schedule Library (local)." 
+We can see some examples in the "Task Schedule Library (Local)." 
 
 <img width="800" alt="2  Example of active scheduled tasks" src="https://github.com/user-attachments/assets/905c5991-a921-43bd-b088-fc622bbabe0b">
 
