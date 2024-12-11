@@ -987,3 +987,136 @@ Since we're doing a full uninstall, we'll select "no."
 <img width="800" alt="8  keep configuration option" src="https://github.com/user-attachments/assets/8840df9f-d31e-409e-9551-762c02acf274">
 
 Now ```notepad++``` has been uninstalled. 
+
+# Lab #9: Windows Registry
+
+The Windows Registry is a crucial component of Windows OS.
+
+It helps our system run smoothly. It's sort of like a giant database containing details about user preferences, system settings, and various options that control how Windows operates and behaves. And these details are referenced by two components—registry keys, and values that represent the data of the key.
+
+Let's walk through how to access, navigate, and modify registry keys (and their respective values). 
+
+Start by opening up the Registry Editor.
+
+<img width="750" alt="1  Open registry editor" src="https://github.com/user-attachments/assets/6967948e-1042-4b11-b769-2ea6661baed6" />
+
+In the left pane, we'll see folders that start with ```HKEY```.
+
+This stands for "Handle to a Key." In the registry, keys are like folders that hold various settings and information. The term "handle" refers to a way for the OS to access those keys. Each of these ```HKEY``` folders are also commonly called "hives" because they act similar to the structure of bee hives.
+
+They have various compartments for different purposes. 
+
+<img width="800" alt="2  Registry Editor view" src="https://github.com/user-attachments/assets/436f62d4-cbe1-4c8b-8d23-064292584311" />
+
+That being said, here are brief descriptions for each hive:
+
+- ```HKEY_CLASSES_ROOT```: This hive is like a dictionary for file types. It tells the computer how to open up different types of files. Contains file extension associations, OLE object class registrations, and shortcuts. 
+` ```HKEY_CURRENT_USER```: This hive remembers settings for the current user using the computer. Stores settings and configurations like desktop background, colors, and personal preferences.
+- ```HKEY_LOCAL_MACHINE```: This hive is like the computer's memory. It holds important system-wide settings and configurations for all users on the computer.
+- ```HKEY_USERS```: This hive is like the ```HKEY_CURRENT_USER``` hive, but for all the users. It contains user profiles and settings for all user accounts on the system.
+- ```HKEY_CURRENT_CONFIG```: This hive guides the computer about how to work with its hardware. It provides information about the current hardware profile of the system.
+
+When we expand a hive, we'll see folders underneath them.
+
+These folders are the registry keys and their corresponding sub-keys (oftentimes many sub-keys). Inside the final sub-key we'll find values that represent data. And these values indicate how that specific software or service operates. 
+
+Let's run through an example.
+
+We'll navigate to the following key path in the registry:
+
+```
+Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+```
+
+<img width="800" alt="3  Run key in registry editor" src="https://github.com/user-attachments/assets/034d2699-5e9c-441c-9b99-47808b1f9315" />
+
+Quick breakdown: 
+
+- We're inside the ```HKEY_CURRENT_USER``` hive. 
+- We've expanded the following keys and sub-keys: ```Software```, ```Microsoft```, ```Windows```, and ```CurrentVersion```.
+- The final sub-key is ```Run```. This is used to store programs or scripts that'll run automatically when the current user logs in. 
+
+**Side Note:** The ```Run``` key is similar to Task Scheduler. The main difference is that Task Scheduler allows for more detailed scheduling and conditions, whereas the registry ```Run``` key simply launches programs at user logon without additional conditions. Task Scheduler provides more flexibility, whereas the ```Run``` key gives us simplicity.
+
+Next let's add a value to the ```Run``` key.
+
+This will specify which programs or scripts we'll want to run at startup. If we right-click anywhere in the white space and select ```New >```, we'll get a list of value types.
+
+<img width="800" alt="4  Key value types" src="https://github.com/user-attachments/assets/e874c24c-fce3-44a7-9df3-efbdbb7f8333" />
+
+Here's a quick description of each value type: 
+
+- ```String Value``` (REG_SZ): This type stores regular text, like words and sentences. It's like a label you can attach to something.
+- ```Binary Value``` (REG_BINARY): This type stores data in a format that computers understand directly. It's used for storing machine-readable information, like program settings.
+- ```DWORD (32-bit) Value``` (REG_DWORD): This type stores numbers, but only whole numbers without decimal points. It's like counting with integers.
+- ```QWORD (64-bit) Value``` (REG_QWORD): Similar to ```DWORD Value```, but it can store much larger numbers. Think of it like using bigger numbers for counting.
+- ```Multi-String Value``` (REG_MULTI_SZ): This type stores multiple pieces of text in a list format. It's like having a shopping list with several items.
+- ```Expandable String Value``` (REG_EXPAND_SZ): This type is for storing text that might contain shortcuts or variables that can change. It's like writing down instructions that can adapt to different situations.
+
+Let's configure ```PowerShell``` to run upon logging in. 
+
+We'll add a ```String Value``` and name it "Run PowerShell." 
+
+<img width="643" alt="5  Create String Value and name it" src="https://github.com/user-attachments/assets/74ad074a-b2cb-4472-a471-21062f7adc1f" />
+
+Right-click it and select modify.
+
+<img width="636" alt="6  Modify string value" src="https://github.com/user-attachments/assets/27bfe6e4-8efd-4936-81fc-c4b7a893cbaa" />
+
+Now we can provide "value data" to specify the PowerShell application.
+
+<img width="621" alt="7  add value data in registry" src="https://github.com/user-attachments/assets/19a551da-0840-49a6-b8b4-afb1ccbe7b64" />
+
+We want to specify where the executable file lives on disk. Just like we did for the [scheduled tasks lab](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-7-working-with-scheduled-tasks), we'll use Task Manager to find the binary file's location.
+
+Open up ```PowerShell```.
+
+Now open up Task Manager and find the active instance of ```PowerShell``` we just ran. Right-click it, select "Properties," and we'll see the location where the binary file loads from.
+
+<img width="800" alt="8  Location for PowerShell" src="https://github.com/user-attachments/assets/d295d2af-6610-43a5-8c51-2bf5a68fef2c" />
+
+Copy/paste that location into the "value data" and specify the executable file. 
+
+<img width="800" alt="9  Add value data" src="https://github.com/user-attachments/assets/ac28819d-eb7a-436d-83ef-33adfc415830" />
+
+Once we press OK, we'll have a value that will run and execute ```PowerShell``` at logon.
+
+<img width="589" alt="10  String data set for run key" src="https://github.com/user-attachments/assets/d4c4d856-3598-4b9c-90b8-2c14f201e19c" />
+
+Now let's review how we can export this string as a "registry object" by selecting it and clicking from the top ```File > Export```
+
+<img width="600" alt="11  Export powershell registry object" src="https://github.com/user-attachments/assets/ab0327ed-324a-45eb-862e-f09f63c73333" />
+
+Save it as ```backup``` under the ```Desktop``` folder.
+
+<img width="800" alt="12  Save powershell registry object as backup" src="https://github.com/user-attachments/assets/6c34ef87-51ab-4652-836a-01bea5224603" />
+
+Observe that now we have an object we can share with others that could be a patch or a fix for other workstations.
+
+<img width="800" alt="13  Backup reg object file" src="https://github.com/user-attachments/assets/ce49ac65-c148-4fee-977f-9f6cf36ed6e9" />
+
+Let's quickly import it to display how to bring it into our system.
+
+I'll delete our newly created registry key. Then I'll select ```File > Import``` from the top. 
+
+<img width="578" alt="14  Import backup reg object file" src="https://github.com/user-attachments/assets/938f56ec-ca39-45f0-9658-7b95defad894" />
+
+Select the ```backup``` file and open it up.
+
+<img width="800" alt="15  Select object for import" src="https://github.com/user-attachments/assets/a1784d7f-acc3-4d69-a9a3-04e3213625b7" />
+
+Now we've imported the ```Run PowerShell``` registry object back into our ```Run``` key. 
+
+Finally, let's restart our system to make sure ```PowerShell``` runs when we log in.
+
+<img width="750" alt="16  Restarting computer" src="https://github.com/user-attachments/assets/a781bf9d-e148-4952-bdcb-f6af8385f0c5" />
+
+It successfully opened on startup.
+
+<img width="800" alt="17  Powershell opened on startup" src="https://github.com/user-attachments/assets/7b3efd30-32de-4a0e-874d-fde6212231e4" />
+
+It's time to clean up my environment and delete the ```String Value```.
+
+Simply right-click the value and select "Delete."
+
+<img width="590" alt="18  Delete registry object" src="https://github.com/user-attachments/assets/78d859f0-c746-4eed-862a-45fd02f48c61" />
