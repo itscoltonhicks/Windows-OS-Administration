@@ -1012,8 +1012,8 @@ They have various compartments for different purposes.
 
 That being said, here are brief descriptions for each hive:
 
-- ```HKEY_CLASSES_ROOT```: This hive is like a dictionary for file types. It tells the computer how to open up different types of files. Contains file extension associations, OLE object class registrations, and shortcuts. 
-` ```HKEY_CURRENT_USER```: This hive remembers settings for the current user using the computer. Stores settings and configurations like desktop background, colors, and personal preferences.
+- ```HKEY_CLASSES_ROOT```: This hive is like a dictionary for file types. It tells the computer how to open up different types of files. It contains file extension associations, OLE object class registrations, and shortcuts. 
+- ```HKEY_CURRENT_USER```: This hive remembers settings for the current user using the computer. It stores settings and configurations like desktop background, colors, and personal preferences.
 - ```HKEY_LOCAL_MACHINE```: This hive is like the computer's memory. It holds important system-wide settings and configurations for all users on the computer.
 - ```HKEY_USERS```: This hive is like the ```HKEY_CURRENT_USER``` hive, but for all the users. It contains user profiles and settings for all user accounts on the system.
 - ```HKEY_CURRENT_CONFIG```: This hive guides the computer about how to work with its hardware. It provides information about the current hardware profile of the system.
