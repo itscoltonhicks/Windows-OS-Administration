@@ -1,22 +1,22 @@
 # Windows OS Administration (Project Labs In Progress)
 # Table of Contents
-[Introduction](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#introduction)
+- [Introduction](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#introduction)
 
-[Lab #1: Navigating the Windows Desktop](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-1-navigating-the-windows-desktop)
+- [Lab #1: Navigating the Windows Desktop](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-1-navigating-the-windows-desktop)
 
-[Lab #2: The Windows File System](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-2-the-windows-file-system)
+- [Lab #2: The Windows File System](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-2-the-windows-file-system)
 
-[Lab #3: Managing Windows User Accounts](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-3-managing-windows-user-accounts)
+- [Lab #3: Managing Windows User Accounts](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-3-managing-windows-user-accounts)
 
-[Lab #4: Managing Windows User Permissions](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-4-managing-windows-user-permissions)
+- [Lab #4: Managing Windows User Permissions](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-4-managing-windows-user-permissions)
 
-[Lab #5: Exploring Windows Processes](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-5-exploring-windows-processes)
+- [Lab #5: Exploring Windows Processes](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-5-exploring-windows-processes)
 
-[Lab #6: Exploring Windows Services](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-6-exploring-windows-services)
+- [Lab #6: Exploring Windows Services](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-6-exploring-windows-services)
 
-[Lab #7: Working with Scheduled Tasks](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-7-working-with-scheduled-tasks)
+- [Lab #7: Working with Scheduled Tasks](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-7-working-with-scheduled-tasks)
 
-[Lab #8: Installing and Removing Software](
+- [Lab #8: Installing and Removing Software](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-8-installing-and-removing-software)
 
 # Introduction
 
