@@ -16,6 +16,8 @@
 
 [Lab #7: Working with Scheduled Tasks](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-7-working-with-scheduled-tasks)
 
+[Lab #8: Installing and Removing Software](
+
 # Introduction
 
 Cybersecurity is a subset of IT.
@@ -933,3 +935,55 @@ We'll be presented with a popup menu to review the task and do some final config
 Now our task is back in our environment and ready to go.
 
 <img width="800" alt="27  successful import of scheduled task" src="https://github.com/user-attachments/assets/aa9141df-ef64-41c8-8266-b6e95033afcd">
+
+# Lab #8: Installing and Removing Software
+
+Eventually we're going to want to install or remove software on Windows.
+
+Let's get started by installing software. We'll install a code and text editor called ```notepad++```. Open up a browser, google for ```notepad++```, and download the installer file.
+
+Make sure it's the latest version.
+
+<img width="800" alt="1  Download notepad++" src="https://github.com/user-attachments/assets/a9d0e47d-2dab-4874-a8cf-1a145c3d596e">
+
+Once we click it, a little downloader drop-down pops up.
+
+This is just telling us we downloaded an executable file.
+
+<img width="800" alt="2  Downloader dropdown" src="https://github.com/user-attachments/assets/7ca7b0e8-2ded-487c-9bd6-e734f9095aed">
+
+Open the file and follow the prompts to install it.
+
+<img width="800" alt="3  Prompts to install notepad++" src="https://github.com/user-attachments/assets/61b91e17-a991-47ac-a34c-66550989ce6c">
+
+Once we've made it to the end, create a shortcut on the desktop and click "Install." 
+
+<img width="800" alt="4  Create desktop shortcut and install" src="https://github.com/user-attachments/assets/7896b8a2-16e3-41ec-b52e-74d816d8ed68">
+
+Great, now we've installed it. 
+
+<img width="800" alt="5  Notepad++ is installed" src="https://github.com/user-attachments/assets/ad0f88c3-1bdb-4d83-9688-3d35af05c89e">
+
+Now let's walk through how to uninstall it.
+
+To do that, we need to find a list of the installed software on our machine. 
+
+Search for "programs" in the search box and select the system settings option that says "Add or remove programs." 
+
+<img width="750" alt="6  find list of installed programs" src="https://github.com/user-attachments/assets/1129c96d-f9c5-43a1-941f-aa831141d252">
+
+Now we'll see a list of everything installed on our system.
+
+Find ```notepad++```, select it, and click "Uninstall."
+
+<img width="800" alt="7  Uninstall notepad++" src="https://github.com/user-attachments/assets/7447d54a-da14-4e70-91bf-0489f1f34357">
+
+Sometimes we'll have a "keep configuration" option available when uninstalling programs (like with ```notepad++```).
+
+Clicking "yes" will preserve our data and save our custom settings, preferences, and profiles for the program. Clicking "no" would fully reset the program and remove all traces from our system. 
+
+Since we're doing a full uninstall, we'll select "no."
+
+<img width="800" alt="8  keep configuration option" src="https://github.com/user-attachments/assets/8840df9f-d31e-409e-9551-762c02acf274">
+
+Now ```notepad++``` has been uninstalled. 
