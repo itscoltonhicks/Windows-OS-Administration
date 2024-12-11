@@ -18,6 +18,8 @@
 
 - [Lab #8: Installing and Removing Software](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-8-installing-and-removing-software)
 
+- [Lab #9: Windows Registry](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-9-windows-registry)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
