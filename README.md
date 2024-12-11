@@ -1093,7 +1093,7 @@ Save it as ```backup``` under the ```Desktop``` folder.
 
 <img width="800" alt="12  Save powershell registry object as backup" src="https://github.com/user-attachments/assets/6c34ef87-51ab-4652-836a-01bea5224603" />
 
-Observe that now we have an object we can share with others that could be a patch or a fix for other workstations.
+Observe that now we have an object we can share with others that could be a patch or a fix for other workstations. [Review that object here, if curious](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/Project-Files/backup.reg).
 
 <img width="800" alt="13  Backup reg object file" src="https://github.com/user-attachments/assets/ce49ac65-c148-4fee-977f-9f6cf36ed6e9" />
 
