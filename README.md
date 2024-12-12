@@ -1121,4 +1121,230 @@ It's time to clean up my environment and delete the ```String Value```.
 
 Simply right-click the value and select "Delete."
 
-<img width="590" alt="18  Delete registry object" src="https://github.com/user-attachments/assets/78d859f0-c746-4eed-862a-45fd02f48c61" loading="lazy"/>
+<img width="590" alt="18  Delete registry object" src="https://github.com/user-attachments/assets/78d859f0-c746-4eed-862a-45fd02f48c61" loading="lazy"/> 
+
+# Lab #10: Introduction to CMD
+
+```CMD``` or Command Prompt is a text-based interface in Windows.
+
+It allows us to interact with the operating system by entering commands. It's a powerful and fast way to manage various system operations. Before the rise of the GUI, this was how system administrators and IT professionals interacted with Windows. And its relevance today lies in its speed and precision.
+
+In this lab, we'll start getting comfortable using ```CMD``` with some basic commands.
+
+## Opening CMD and Basic Commands
+
+Let's open up Command Prompt.
+
+We'll begin with the ```ver``` command. 
+
+```
+ver
+```
+
+This will output the current version of Windows we're using. 
+
+<img width="612" alt="1  ver command" src="https://github.com/user-attachments/assets/9734abfd-87a4-4f71-9778-1e13cb5a9137" loading="lazy"/>
+
+The output suggests we're using Windows 10. We'll also see additional details like the build and revision numbers.
+
+Now the ```cd``` command allows us to change directories. If we don't specify the directory, we'll get sent to our home folder.
+
+<img width="586" alt="2  cd to home directory" src="https://github.com/user-attachments/assets/81336ec2-41d3-4d35-b1d4-6c6335c6b1f9" loading="lazy"/>
+
+If we want to see what's inside our home folder, we can use the ```dir``` command to list the files and folders.
+
+<img width="586" alt="3  dir command" src="https://github.com/user-attachments/assets/449bed9d-86b0-4ff5-9e3a-ccc26eaa29f5" loading="lazy"/>
+
+Next let's see what happens when we use a command that doesn't exist, which will create an error.
+
+<img width="584" alt="4  error statement in cmd" src="https://github.com/user-attachments/assets/5858ae39-9076-4b62-b29a-338617eedf78" loading="lazy"/>
+
+The error statements are important because they'll tell us why the command isn't working. 
+
+This can help us troubleshoot or debug. In our case, the error is just stating it doesn't recognize the ```directory``` command. That's because it's not a real command. Let's continue using commands that it'll recognize.
+
+If we want to clear our terminal and clean it up, we can enter the ```cls``` command.
+
+Now the subsequent images will display a clear terminal.
+
+<img width="584" alt="5  clear terminal thanks to cls" src="https://github.com/user-attachments/assets/2c937ad7-7baf-42c8-90a6-07e3a4f5fa19" loading="lazy"/>
+
+## File and Directory Operations
+
+Next we'll manage file and folder operations. 
+
+Let's start with creating a folder. Remember, a folder is also called a directory. Use the following command to "make a directory":
+
+```
+mkdir testfolder
+```
+
+<img width="653" alt="6  Create folder in cmd" src="https://github.com/user-attachments/assets/63760889-8036-4f62-930e-a6797f45f8b7" loading="lazy"/>
+
+At this point, I'll change directories into my ```testfolder``` so we can run commands from that location on disk.
+
+Listing the files and folders inside ```testfolder``` reveals that nothing's inside.
+
+<img width="655" alt="7  cd and dir of testfolder" src="https://github.com/user-attachments/assets/6a77c2c1-4aec-49ad-82e9-c8150fe890a6" loading="lazy"/>
+
+Next we'll create and read a file.
+
+Here's the command for that: 
+
+```
+echo "Hello" > testfile
+```
+
+The ```>``` operator redirects the text ```Hello``` into a file named ```testfile```. 
+
+This file will get automatically created if the name doesn't exist inside the current directory.
+
+And if we wanted to read the contents of that file, we can use the ```type``` command:
+
+```
+type testfile
+```
+
+<img width="655" alt="8  echo text into new file and use type command to display" src="https://github.com/user-attachments/assets/dce65ed1-27c4-4258-82c8-325f3b44eb39" loading="lazy"/>
+
+So what happens when we don't know what a command does?
+
+Then we can type in the name of a command, followed by the help parameter ```/?```. This will give us a summary of what the command does and ways to run it. 
+
+We'll do this with the ```rename``` command:
+
+```
+rename /?
+```
+
+<img width="655" alt="9  rename command with help parameter" src="https://github.com/user-attachments/assets/e3460e21-1add-4c00-8712-8db35fd8424a" loading="lazy"/>
+
+This will show us a summary of the ```rename``` command, and ways we can rename a file.
+
+Following the syntax provided in the help information above, we'll rename our test file.
+
+```
+rename testfile hello.txt
+```
+
+Now we can read the file and get the same output (since all we did was change the name).
+
+<img width="656" alt="10  renamed new file in cmd" src="https://github.com/user-attachments/assets/39e3c190-63ab-4d05-9a3a-97649b28fddf" loading="lazy"/>
+
+What if we wanted to add some text to the file? 
+
+Then we'd just use the ```>>``` redirection operators to append the text. For example:
+
+```
+echo "My name is Colton" >> hello.txt
+```
+
+Notice how it just adds text to the file.
+
+<img width="653" alt="11  append text with redirection operators" src="https://github.com/user-attachments/assets/1771f410-a942-4473-88a4-4ee77a240557" loading="lazy"/>
+
+## Running Applications and Deleting Files
+
+We can also run applications from the command line.
+
+Let's run ```notepad```:
+
+```
+notepad hello.txt
+```
+
+Instead of the text displaying in the terminal, it will appear in ```notepad```. We'll also notice how it's an active process in Task Manager.
+
+<img width="655" alt="12  open notepad app from cmd" src="https://github.com/user-attachments/assets/0edcde1e-8f71-41be-aae3-b0d9552568c6" loading="lazy"/>
+
+But now I want to end the ```notepad``` task in the terminal.
+
+We'll need its Process ID (PID) to accomplish this. So first we'll enter ```tasklist```, which provides a list of running processes (just like the Task Manager).
+
+Here's what it would look like to use ```tasklist``` by itself.
+
+<img width="655" alt="13  tasklist command" src="https://github.com/user-attachments/assets/e7958024-778e-4757-8fe6-13693744bd9b" loading="lazy"/>
+
+It provides a lot of information. So to find the ```notepad``` task more quickly, we'll want to add a few components to the command.
+
+We'll want to add the ```find``` command to it. This works like ```CTRL + F``` on Windows, helping us filter for the specific ```notepad``` process among the task list. But we'll need to add a pipe operator ```|``` in between ```tasklist``` and ```find```.
+
+The pipe operator passes the output of the ```tasklist``` command to the ```find``` one, much like a conveyer belt. 
+
+Here's what the full command looks like:
+
+```
+tasklist | find "notepad.exe"
+```
+
+We ask to see a list of running processes. Then we ask to filter for ```notepad.exe``` before receiving the final output. 
+
+<img width="654" alt="14  tasklist and find command with pipe operator" src="https://github.com/user-attachments/assets/d8030ab6-f3b9-4fc4-aaea-69d80c52cb76" loading="lazy"/>
+
+The important thing to note here is the ```5484```. 
+
+This is the Process ID. Now we have everything we need to terminate ```notepad``` on the command line:
+
+```
+taskkill /F /PID 1168
+```
+
+Quick command breakdown:
+
+- ```taskkill```: This is the command used to terminate Windows processes. 
+- ```/F```: This "forces" the termination of the process. Without it, the process might not terminate quickly if its unresponsive or stuck.
+- ```/PID 1168```: ```/PID``` is the parameter that specifies the process ID. And the ```1168``` is the PID for ```notepad```.
+
+Notice how this removes the running instance of ```notepad``` has been terminated from our environment:
+
+<img width="657" alt="15  taskkill command" src="https://github.com/user-attachments/assets/f576bdd5-6c7e-4626-b97f-3bd941313247" loading="lazy"/>
+
+Now we'll clean our environment by deleting files and folder through the command line.
+
+Here's how we'll delete the ```hello.txt``` file:
+
+```
+del hello.txt
+```
+
+<img width="656" alt="16  delete file in cmd" src="https://github.com/user-attachments/assets/8917b52d-ab38-4be2-a9f5-0d220334ab97" loading="lazy"/>
+
+The ```hello.txt``` file is gone.
+
+But notice how we have additional files in the image above (I added them behind-the-scenes).
+
+We can delete the rest of the files at once using the ```*``` wildcard:
+
+```
+del he*
+```
+
+This would mean that any file that starts with ```he``` will get deleted.
+
+<img width="656" alt="17  Delete multiple files at once with wildcard" src="https://github.com/user-attachments/assets/caf379fe-37aa-4cb9-b78e-2191180f8cd7" loading="lazy"/>
+
+Now all the files are gone.
+
+Next let's go back a directory using ```cd ..```. Then we'll delete the ```testfolder``` using the ```rmdir``` command:
+
+```
+rmdir testfolder
+```
+
+Now we've deleted ```testfolder```.
+
+<img width="688" alt="18  rmdir command" src="https://github.com/user-attachments/assets/2ae603f2-b8da-4060-b79f-3446dec226d2" loading="lazy"/>
+
+## Advanced CMD Operations
+
+Let's run through some additional CMD commands.
+
+The ```systeminfo``` command will give us detailed system information.
+
+<img width="800" alt="19  systeminfo command" src="https://github.com/user-attachments/assets/0dbf93a3-c03f-4b31-9642-b10099b74273" loading="lazy"/>
+
+If we wanted more network configuration details, we could use the ```ipconfig``` command.
+
+<img width="688" alt="20  ipconfig command" src="https://github.com/user-attachments/assets/a0bf3662-f590-40f0-a35c-cdd1eb46c3ff" loading="lazy"/>
+
+These two commands show how we can gather important system and network information without needing to click around on the GUI.
