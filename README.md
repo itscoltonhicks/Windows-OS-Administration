@@ -1129,7 +1129,7 @@ Simply right-click the value and select "Delete."
 
 ```CMD``` or Command Prompt is a text-based interface in Windows.
 
-It allows us to interact with the operating system by entering commands. It's a powerful and fast way to manage various system operations. Before the rise of the GUI, this was how system administrators and IT professionals interacted with Windows. And its relevance today lies in its speed and precision.
+It allows us to interact with the operating system by entering commands. It's a powerful and fast way to manage various system operations. Before the rise of the GUI, this was the main terminal system administrators and IT professionals used to interact with Windows. And it's still relevant today due to its speed and precision for basic administrative tasks.
 
 In this lab, we'll start getting comfortable using ```CMD``` with some basic commands.
 
