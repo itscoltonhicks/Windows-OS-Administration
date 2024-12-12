@@ -1263,8 +1263,6 @@ But now I want to end the ```notepad``` task in the terminal.
 
 We'll need its Process ID (PID) to accomplish this. So first we'll enter ```tasklist```, which provides a list of running processes (just like the Task Manager).
 
-Here's what it would look like to use ```tasklist``` by itself.
-
 <img width="655" alt="13  tasklist command" src="https://github.com/user-attachments/assets/e7958024-778e-4757-8fe6-13693744bd9b" loading="lazy"/>
 
 It provides a lot of information. So to find the ```notepad``` task more quickly, we'll want to add a few components to the command.
