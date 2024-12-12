@@ -1154,7 +1154,7 @@ reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Run 
 Quick command breakdown:
 
 - ```reg add```: This is the command to add a new entry to the Windows registry.
-- ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run```: This is the exact registry path where we're the new entry will be added.
+- ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run```: This is the exact registry path where the new entry will be added.
 - ```/v "Run PowerShell"```: ```/v``` specifies the name of the registry entry. And ```"Run PowerShell"``` is the name we're giving it. 
 - ```/t REG_SZ```: ```/t``` specifies the type of registry value to be added. And ```REG_SZ``` stands for a string value.
 - ```/d "powershell.exe"```: ```/d``` specifies the data to be assigned to the registry entry. And ```"powershell.exe"``` is the binary file we want to run on startup.
@@ -1172,7 +1172,7 @@ reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "R
 
 The ```reg delete``` specifies we want to delete the object named ```Run PowerShell```, which is located in the ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run``` registry path.
 
-Querying the registry path a final time reveals how it's deleted.
+Querying the registry path a final time reveals that it's deleted.
 
 <img width="900" alt="21  reg delete command" src="https://github.com/user-attachments/assets/7ac47c76-bc02-4faf-8a8e-3389eb69a0f3" loading="lazy"/>
 
