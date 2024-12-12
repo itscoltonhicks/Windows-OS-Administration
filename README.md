@@ -20,6 +20,8 @@
 
 - [Lab #9: Windows Registry](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-9-windows-registry)
 
+- [Lab #10: Introduction to CMD](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-10-introduction-to-cmd)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
