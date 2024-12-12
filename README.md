@@ -1286,14 +1286,14 @@ The important thing to note here is the ```5484```.
 This is the Process ID. Now we have everything we need to terminate ```notepad``` on the command line:
 
 ```
-taskkill /F /PID 1168
+taskkill /F /PID 5484
 ```
 
 Quick command breakdown:
 
 - ```taskkill```: This is the command used to terminate Windows processes. 
 - ```/F```: This "forces" the termination of the process. Without it, the process might not terminate quickly if its unresponsive or stuck.
-- ```/PID 1168```: ```/PID``` is the parameter that specifies the process ID. And the ```1168``` is the PID for ```notepad```.
+- ```/PID 5484```: ```/PID``` is the parameter that specifies the process ID. And the ```5484``` is the PID for ```notepad```.
 
 Notice how this removes the running instance of ```notepad``` has been terminated from our environment:
 
