@@ -1295,7 +1295,7 @@ Quick command breakdown:
 - ```/F```: This "forces" the termination of the process. Without it, the process might not terminate quickly if its unresponsive or stuck.
 - ```/PID 5484```: ```/PID``` is the parameter that specifies the process ID. And the ```5484``` is the PID for ```notepad```.
 
-Notice how this removes the running instance of ```notepad``` has been terminated from our environment:
+Notice how ```notepad``` has been terminated from our environment:
 
 <img width="657" alt="15  taskkill command" src="https://github.com/user-attachments/assets/f576bdd5-6c7e-4626-b97f-3bd941313247" loading="lazy"/>
 
