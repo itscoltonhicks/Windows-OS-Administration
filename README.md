@@ -1,6 +1,6 @@
 # Windows OS Administration (Project Labs In Progress)
 # Table of Contents
-Hey there! For easy navigation, just click on the <img width="25" alt="table of contents image" src="https://github.com/user-attachments/assets/12cfe276-d3fd-457d-acf5-c10d50b333a2" loading="lazy"> icon at the top of the page. This will open up the Table of Contents.
+Hey there! For easy navigation, just click on the <img class="toc-icon" width="25" alt="table of contents image" src="https://github.com/user-attachments/assets/12cfe276-d3fd-457d-acf5-c10d50b333a2" loading="lazy"> icon at the top of the page. This will open up the Table of Contents.
 
 Enjoy the content!
 
