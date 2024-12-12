@@ -1125,6 +1125,57 @@ Simply right-click the value and select "Delete."
 
 <img width="590" alt="18  Delete registry object" src="https://github.com/user-attachments/assets/78d859f0-c746-4eed-862a-45fd02f48c61" loading="lazy"/> 
 
+For the remainder of this section, I'll use the ```CMD``` command line to view and modify the registry. 
+
+Open up Command Prompt.
+
+Let's start by querying the same registry path to see what's inside:
+
+```
+reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+```
+
+Quick command breakdown:
+
+- ```reg```: This is the command used to interact with the Windows registry.
+- ```query```: This parameter tells the ```reg``` command to query information in the registry.
+- ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run```: This is the exact registry path we want to query.
+
+<img width="799" alt="19  reg query command" src="https://github.com/user-attachments/assets/5cfc3d11-1f77-40f5-aa3d-d7843adb1ff6" loading="lazy"/>
+
+We'll see the default values that came pre-configured on my VM. 
+
+Now let's use a command to configure PowerShell to automatically run when I log on:
+
+```
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Run PowerShell" /t REG_SZ /d "powershell.exe" /f
+```
+
+Quick command breakdown:
+
+- ```reg add```: This is the command to add a new entry to the Windows registry.
+- ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run```: This is the exact registry path where we're the new entry will be added.
+- ```/v "Run PowerShell"```: ```/v``` specifies the name of the registry entry. And ```"Run PowerShell"``` is the name we're giving it. 
+- ```/t REG_SZ```: ```/t``` specifies the type of registry value to be added. And ```REG_SZ``` stands for a string value.
+- ```/d "powershell.exe"```: ```/d``` specifies the data to be assigned to the registry entry. And ```"powershell.exe"``` is the binary file we want to run on startup.
+- ```/f```: This forces the value to be added without prompting for confirmation. 
+
+Let's query the registry path again to reveal the new entry.
+
+<img width="900" alt="20  reg add command" src="https://github.com/user-attachments/assets/64f0c6c4-532f-4e04-b422-b13d4fa0bb89" loading="lazy"/>
+
+Finally we can delete the entry.
+
+```
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Run PowerShell" /f
+```
+
+The ```reg delete``` specifies we want to delete the object named ```Run PowerShell```, which is located in the ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run``` registry path.
+
+Querying the registry path a final time reveals how it's deleted.
+
+<img width="900" alt="21  reg delete command" src="https://github.com/user-attachments/assets/7ac47c76-bc02-4faf-8a8e-3389eb69a0f3" loading="lazy"/>
+
 # Lab #10: Introduction to CMD
 
 ```CMD``` or Command Prompt is a text-based interface in Windows.
