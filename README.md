@@ -1643,7 +1643,7 @@ Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" 
 
 Harnessing PowerShell scripts gives us unparalleled automation and systems administration abilities.
 
-And to help us, Windows has a built-in tool that guides our script-building process. It's called the Powershell ISE (Integrated Scripting Environment). It makes writing scripts even easier because it shows us what we’re typing, helps us find mistakes, and lets us see the results instantly.
+And to help us, Windows has a built-in tool that guides our script-building process. It's called the PowerShell ISE (Integrated Scripting Environment). It makes writing scripts even easier because it shows us what we’re typing, helps us find mistakes, and lets us see the results instantly.
 
 It basically provides us a graphical way of creating our scripts in real-time. 
 
