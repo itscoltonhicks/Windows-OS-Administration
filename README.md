@@ -1272,7 +1272,7 @@ We'll do this with the ```rename``` command:
 rename /?
 ```
 
-<img width="655" alt="9  rename command with help parameter" src="https://github.com/user-attachments/assets/e3460e21-1add-4c00-8712-8db35fd8424a" loading="lazy"/>
+<img width="800" alt="9  start notepad in powershell" src="https://github.com/user-attachments/assets/15523222-0aef-4e83-8527-b63af4372814" />
 
 This will show us a summary of the ```rename``` command, and ways we can rename a file.
 
