@@ -24,7 +24,7 @@
 
 - [Lab #11: Introduction to PowerShell](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-11-introduction-to-powershell)
 
-- [Windows Event Viewer for Security Investigations](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-12-windows-event-viewer-for-security-investigations)
+- [Lab #12: Windows Event Viewer for Security Investigations](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-12-windows-event-viewer-for-security-investigations)
 
 # Introduction
 
