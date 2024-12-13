@@ -1565,6 +1565,7 @@ Let's rename this file:
 
 ```
 Rename-Item -Path .\hello.txt -NewName NewHello.txt
+```
 
 <img width="450" alt="13  Rename-Item cmdlet" src="https://github.com/user-attachments/assets/8cbe44e2-d266-4106-840c-216972d8b995" loading="lazy"/>
 
