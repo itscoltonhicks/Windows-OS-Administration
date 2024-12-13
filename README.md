@@ -22,6 +22,8 @@
 
 - [Lab #10: Introduction to CMD](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-10-introduction-to-cmd)
 
+- [Lab #11: Introduction to PowerShell](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-11-introduction-to-powershell)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
@@ -1404,7 +1406,7 @@ These two commands show how we can gather important system and network informati
 
 Compared to CMD, PowerShell provides a more feature-rich command line experience.
 
-We refer to PowerShell as both an interactive command-line shell and a scripting languge. The PowerShell terminal provides us an environment to execute commands. And the PowerShell scripting language uses ```cmdlets``` to perform multiple commands at once and automate complex administrative tasks. 
+We refer to PowerShell as both an interactive command-line shell and a scripting language. The PowerShell terminal provides us an environment to execute commands. And the PowerShell scripting language uses ```cmdlets``` to perform multiple commands at once and automate complex administrative tasks. 
 
 It's a powerful way to manage and configure Windows systems efficiently.
 
@@ -1524,7 +1526,7 @@ Get-Process | Where-Object {$_.Name -eq "notepad }
 ```
 
 Quick command breakdown:
-- ```Get-Process```: This ```cmdlet``` retrives a list of running processes currently running on the system.
+- ```Get-Process```: This ```cmdlet``` retrieves a list of running processes currently running on the system.
 - ```|```: The pipe operator takes the output from ```Get-Process``` and passes it as input to the next command.
 - ```Where-Object```: The ```Where-Object``` cmdlet filters object passed through the pipeline based on specified criteria.
 - ```{ $_.Name -eq "notepad }```: This is the specific criteria being filtered. The ```$_``` is an automatic variable that represents the current object in the pipeline (```Get-Process```). The ```.Name``` property refers to the name of the process. The ```-eq``` operator means "equal to." And ```notepad``` is the process name we're filtering for. 
