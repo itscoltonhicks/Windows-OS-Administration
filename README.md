@@ -1774,11 +1774,7 @@ Notice how the PID is in hexadecimal form.
 
 We can convert it into decimal form to view the PID in a way we're already familiar with.
 
-```image of opening calculator```
-
-Input the hexadecimal number.
-
-Watch it convert to decimal form. And this is the PID, which matches what we see in Task Manager.
+Input the hexadecimal number into a calculator. And watch it convert to decimal form. This is the PID, which matches what we see in Task Manager.
 
 <img width="800" alt="10  convert hex into dec for security event" src="https://github.com/user-attachments/assets/5bcb43d6-2a95-4d59-a7dd-d5298647d9ef" loading="lazy"/>
 
