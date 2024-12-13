@@ -1426,9 +1426,9 @@ $PSVersionTable.PSVersion
 
 Observe how things are neatly presented in columns and rows. 
 
-The ```$``` indicates we're referencing an object or variable. And the ```.PSVersion``` is an attribute specifying the data we'd like to reference from the object. It's kind of like saying a pen is an object and its color is an attribute.  If you want to see what color pen I have, you'd need to specify the object you want to see (the pen) and which attribute is important to you (the color). 
+The ```$``` indicates we're referencing a predefined variable that stores a hashtable of objects with information about the PowerShell environment. And the ```.PSVersion``` is an attribute specifying the data we'd like to reference from this hashtable. It's kind of like saying a pen is a variable and its color is an attribute.  If you want to see what color pen I have, you'd need to specify the variable you want to see (the pen) and which attribute is important to you (the color). 
 
-In this case, we referenced the PowerShell version attribute from the ```$PSVersionTable``` object.
+In this case, we referenced the PowerShell version attribute from the ```$PSVersionTable``` variable.
 
 Let's run the ```clear``` command to clean the terminal up.
 
