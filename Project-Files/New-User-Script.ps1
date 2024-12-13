@@ -1,5 +1,5 @@
 ﻿# Create a new user account
-$Username = “PowerUser”
+$Username = “NewUser”
 $Password = ConvertTo-SecureString “P@ssw0rd123” -AsPlainText -Force
 New-LocalUser -Name $Username -Password $Password -Description “New User Account”
 
