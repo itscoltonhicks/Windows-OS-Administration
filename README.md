@@ -1764,11 +1764,7 @@ In this case, someone tried using the username ```Nick``` to gain access to my W
 
 Another important Event ID is ```4688```. 
 
-This means that a process has been created. It's crucial for system administrators and security professionals to monitor and analyze the activities on a Windows system, especially to detect potentially malicious processes or unauthorized software installations.
-
-Let's filter for the Event ID.
-
-These events provide context for what happens after a logon success or failure.
+This means that a process has been created. It's crucial for system administrators and security professionals to monitor and analyze the activities on a Windows system, especially to detect potentially malicious processes or unauthorized software installations. These events provide context for what happens after a logon success or failure.
 
 We'll see process details like the new Process ID (PID), the process name, and the Creator Process ID (where it originated from). 
 
