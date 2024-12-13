@@ -1655,7 +1655,7 @@ Once it's loaded up, we can see all possible ```cmdlets``` on the right pane.
 
 <img width="800" alt="23  cmdlets in right pane of ise" src="https://github.com/user-attachments/assets/b4335266-f38a-4b09-92bc-e5522b4e5ea5" loading="lazy"/>
 
-Now to illustrate how PowerShell ISE works, I'll add a script for creating a new user.
+Now to illustrate how PowerShell ISE works, I'll [add a script for creating a new user.](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/Project-Files/New-User-Script.ps1)
 
 This script does four things:
 
