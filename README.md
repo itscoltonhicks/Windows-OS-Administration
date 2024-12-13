@@ -1671,3 +1671,184 @@ And when we want to run the script, we can press the green start button at the t
 <img width="800" alt="25  Run script in ise" src="https://github.com/user-attachments/assets/fba3d1db-0777-46c2-97c7-4170eabf5d42" loading="lazy"/>
 
 In a future section, I'll cover the script-building process and use the ISE to create one. 
+
+# Lab #12: Windows Event Viewer for Security Investigations
+
+Windows Event Viewer is a tool that shows us all the logs for what our computer has been up to (and what's happening to it).
+
+It keeps track of everything that happens—errors, warnings, and important events. In this lab, we'll explore Windows Event Logs for security investigations. We'll use the GUI and command line to demonstrate various methods for identifying and analyzing security events.
+
+Let's get started with the GUI.
+
+Open up Event Viewer.
+
+<img width="750" alt="1  Open Event Viewer" src="https://github.com/user-attachments/assets/ecc8ff40-7457-4ef7-967d-a8bee858e84f" loading="lazy"/>
+
+In the left pane, we can see different folders with logs. 
+
+Expanding ```Windows Logs``` will show us different log categories that make up Windows Event Logs.
+
+<img width="800" alt="2  Event Viewer displayed" src="https://github.com/user-attachments/assets/5c219bd7-f0a4-4c6e-bb4f-60b8f4943e1a" loading="lazy"/>
+
+Here's a brief description of each Windows log category:
+
+- **Application:** Records events logged by applications or programs.
+- **Security:** Stores security-related events like login attempts and resource access.
+- **Setup:** Logs events related to the installation of software and system components.
+- **System:** Contains events logged by Windows system components like drivers and services.
+- **Forwarded Events:** Collects events forwarded from other computers in the network for centralized monitoring and analysis.
+
+All these log sources are valuable for investigations.
+
+But we'll focus on exploring the ```Security``` logs for now.
+
+<img width="800" alt="3  Security event logs" src="https://github.com/user-attachments/assets/6dbf5fc8-d03b-446e-8b13-b7c420416b0c" loading="lazy"/>
+
+Windows Event Viewer uses "Event IDs" to categorize specific events.
+
+Let's filter through a couple Event IDs. 
+
+Select ```Filter Current Log...``` in the right pane. Observe that we can now provide event IDs and track down specific events we're looking for related to an event, incident, or just general troubleshooting.
+
+<img width="800" alt="4  Filter current log view" src="https://github.com/user-attachments/assets/3bdc0d74-5eaf-48f4-bc80-03ed4b8c9061" loading="lazy"/>
+
+First we'll filter for Event ID ```4624```. 
+
+This means that a logon was successful. Enter it into the ```Filter Current Log``` window and press OK.
+
+<img width="850" alt="5  Event id 4624" src="https://github.com/user-attachments/assets/9c285961-aee5-434a-be9e-862c04139d50" loading="lazy"/>
+
+Now we'll only see events with the ID ```4624```.
+
+If we select an event, we'll see more specific details about it.
+
+<img width="800" alt="6  details for security events" src="https://github.com/user-attachments/assets/ade0a93b-f92c-4229-94e0-94d6dcbab7e6" loading="lazy"/>
+
+All this information is useful for investigating an event, understanding what actually happened, or learning who's responsible for triggering it. 
+
+Specifically for Event ID ```4624```, we'll get more granular information like ```Logon Type```.
+
+And each logon type indicates the nature of the logon event.
+
+<img width="800" alt="7  logon types" src="https://github.com/user-attachments/assets/556c65b5-7112-4e2a-bb56-10b756f1bef5" />
+
+We'll likely see different logon types if we view different events. Here's a brief description of common ones we'll see:
+
+- **Logon Type 2:** Interactive logon - This occurs when a user logs on directly at the computer using the keyboard or mouse.
+
+- **Logon Type 3:** Network logon - This happens when a user accesses the computer over a network, such as when accessing shared files or printers.
+
+- **Logon Type 4:** Batch logon - This is used for scheduled tasks or scripts that run automatically without user intervention.
+
+- **Logon Type 5:** Service logon - This occurs when a service starts, running in the background with its own credentials.
+
+- **Logon Type 7:** Unlock logon - This happens when a user unlocks a previously locked workstation.
+
+- **Logon Type 10:** Remote interactive logon - This is used for remote desktop connections, where a user logs on to the computer remotely.
+
+- **Logon Type 11:** Cached interactive logon - This occurs when a user logs on using cached credentials, often used when the computer is not connected to the network but has previously cached the user's credentials.
+
+Next let's filter for failed logon attempts.
+
+The Event ID for this is ```4625```. 
+
+The important thing to note here is why a logon failed. 
+
+On the bottom, we'll see the "failure reason."
+
+<img width="800" alt="8  evend id 4625 with details" src="https://github.com/user-attachments/assets/bb06d66a-13ab-404b-a7d9-585a9a2b63f6" loading="lazy"/>
+
+In this case, someone tried using the username ```Nick``` to gain access to my Windows machine. I don't have a ```Nick``` user account. So the reason for failure is ```unknown user name or bad password```.
+
+Another important Event ID is ```4688```. 
+
+This means that a process has been created. It's crucial for system administrators and security professionals to monitor and analyze the activities on a Windows system, especially to detect potentially malicious processes or unauthorized software installations.
+
+Let's filter for the Event ID.
+
+These events provide context for what happens after a logon success or failure.
+
+We'll see process details like the new Process ID (PID), the process name, and the Creator Process ID (where it originated from). 
+
+<img width="800" alt="9  event id 4688 with details" src="https://github.com/user-attachments/assets/8ab466d4-ff4b-469b-bd99-9fb4beba87b2" loading="lazy"/>
+
+Notice how the PID is in hexadecimal form. 
+
+We can convert it into decimal form to view the PID in a way we're already familiar with.
+
+```image of opening calculator```
+
+Input the hexadecimal number.
+
+Watch it convert to decimal form. And this is the PID, which matches what we see in Task Manager.
+
+<img width="800" alt="10  convert hex into dec for security event" src="https://github.com/user-attachments/assets/5bcb43d6-2a95-4d59-a7dd-d5298647d9ef" loading="lazy"/>
+
+So what if we wanted to save an event log and then inspect it later? 
+
+We can easily do that by right-clicking on the event log channel we're interested in and select "Save All Events As..."
+
+<img width="800" alt="11  save security events" src="https://github.com/user-attachments/assets/23150f1d-da81-4a3c-9987-e8208b9a6577" loading="lazy"/>
+
+Then we just give it a name and save it. [Here's the saved file from my lab if you want to inspect.]()
+
+Once it's saved on our local machine, all we need to do is double-click the file.
+
+It'll bring us back into event viewer underneath "Saved Logs." This is useful for digital forensics.
+
+<img width="800" alt="12  Saved security event logs" src="https://github.com/user-attachments/assets/21ba5eea-4a48-4fb2-a3c4-1a903f8e67a0" loading="lazy"/>
+
+Now for the remainder of this section, we'll work in the command line.
+
+Open up CMD or Command Prompt.
+
+Let's run a command to list all the event log channels on the system.
+
+```
+wevtutil el
+```
+
+Quick command breakdown:
+
+- ```wevtutil```: This is a command-line utility in Windows that allows us to manage event logs.
+- ```el```: This stands for "enumerate logs." It lists all the available event log channels on the system.
+
+<img width="800" alt="13  wevtutil el command" src="https://github.com/user-attachments/assets/fbd805d1-8b8d-4110-8849-4fa69f19b271" loading="lazy"/>
+
+We'll see a lot of information in the terminal. But if you scroll through it, you'll notice some common channels we already explored (like Security logs).
+
+<img width="800" alt="14  security event log channel in cmd" src="https://github.com/user-attachments/assets/f07cef71-5cae-48af-ad65-d62cdda8c3e9" loading="lazy"/>
+
+Next let's query events.
+
+```
+wevtutil qe Security /q:"*[System[(EventID=4625)]]"
+```
+
+We'll get logs with that Event ID.
+
+<img width="800" alt="15  data for security event logs in cmd" src="https://github.com/user-attachments/assets/c8b94a12-904d-4ae6-b485-a09731f5378a" loading="lazy"/>
+
+But notice how it's very convoluted to work with logs via CMD. PowerShell makes this a lot easier. 
+
+We can open up PowerShell and use the following command to view Security event logs:
+
+```
+Get-EventLog -LogName Security
+```
+
+```Get-EventLog``` is a cmdlet that retrieves event log entries. And ```-LogName Security``` is a parameter that specifies the name of the log we want to retrieve events from (e.g. Security logs).
+
+<img width="800" alt="16  Get-EventLog cmdlet" src="https://github.com/user-attachments/assets/5cb43d9c-592e-49ac-87a4-c87286933c59" loading="lazy"/>
+
+It's formatted more neatly in PowerShell.
+
+Now let's specify event logs with Event ID 4624:
+
+```
+Get-EventLog -LogName Security -InstanceID 4624
+```
+
+Adding the ```-InstanceID``` parameter allows us to see a list of all event logs with that Event ID.
+
+<img width="800" alt="17  Get-EventLog cmdlet with event id" src="https://github.com/user-attachments/assets/01976b16-1f7d-4700-878c-eccd06ad6344" loading="lazy"/>
