@@ -1440,11 +1440,11 @@ I'll start with ```Get-Location```. This ```cmdlet``` shows us the location of o
 
 Notice how the syntax of ```cmdlets``` are ```verb-noun```.
 
-Some ```cmdlets``` have aliases, which are basically shortcuts or nicknames that make them quicker to type and give you the same output. We can see a list of them with ```Get-Alias```.
+Some ```cmdlets``` have aliases, which are basically shortcuts or nicknames that make them quicker to type and give you the same output. We can see a list of them with ```Get-Alias```. 
 
 <img width="800" alt="3  Get-Alias cmdlet" src="https://github.com/user-attachments/assets/2b9c0cc8-d01d-4ac1-8543-a325f71afd76" loading="lazy"/>
 
-Although they can help us be more efficient, I'll continue this section by using ```cmdlets``` so we can get familiar with them.
+Although they can help us be more efficient, I'll continue this section by using ```cmdlets``` so we can get familiar with them. [Here's a list of aliases if you want a quick cheatsheet.](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/Project-Files/AliasCheatsheet.txt)
 
 Let's run another one to view the files and folders in our current directory:
 
