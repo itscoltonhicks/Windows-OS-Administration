@@ -1515,7 +1515,7 @@ We can start processes the same way as CMD. For example, we can run ```notepad``
 Start-Process notepad hello.txt
 ```
 
-<img width="800" alt="9  start notepad in powershell" src="https://github.com/user-attachments/assets/8f1d05f4-8aec-4d0c-94b6-8262e3f188bd" loading="lazy"/>
+<img width="800" alt="9  start notepad in powershell" src="https://github.com/user-attachments/assets/73e7bc11-660a-4ac4-9ecb-356ec1c2dc14" loading="lazy"/>
 
 We can also terminate the running process in PowerShell.
 
