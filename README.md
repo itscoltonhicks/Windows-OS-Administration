@@ -24,6 +24,8 @@
 
 - [Lab #11: Introduction to PowerShell](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-11-introduction-to-powershell)
 
+- [Windows Event Viewer for Security Investigations](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-12-windows-event-viewer-for-security-investigations)
+
 # Introduction
 
 Cybersecurity is a subset of IT.
@@ -1790,7 +1792,7 @@ We can easily do that by right-clicking on the event log channel we're intereste
 
 <img width="800" alt="11  save security events" src="https://github.com/user-attachments/assets/23150f1d-da81-4a3c-9987-e8208b9a6577" loading="lazy"/>
 
-Then we just give it a name and save it. [Here's the saved file from my lab if you want to inspect.]()
+Then we just give it a name and save it.
 
 Once it's saved on our local machine, all we need to do is double-click the file.
 
