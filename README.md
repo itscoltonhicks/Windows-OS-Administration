@@ -1399,3 +1399,272 @@ If we wanted more network configuration details, we could use the ```ipconfig```
 <img width="688" alt="20  ipconfig command" src="https://github.com/user-attachments/assets/a0bf3662-f590-40f0-a35c-cdd1eb46c3ff" loading="lazy"/>
 
 These two commands show how we can gather important system and network information without needing to click around on the GUI.
+
+# Lab #11: Introduction to PowerShell
+
+Compared to CMD, PowerShell provides a more feature-rich command line experience.
+
+We refer to PowerShell as both an interactive command-line shell and a scripting languge. The PowerShell terminal provides us an environment to execute commands. And the PowerShell scripting language uses ```cmdlets``` to perform multiple commands at once and automate complex administrative tasks. 
+
+It's a powerful way to manage and configure Windows systems efficiently.
+
+Let's walk through how PowerShell works. 
+
+## Basic Commands and Object Management
+
+Open up PowerShell.
+
+Let's check our PowerShell version using an object and variable.
+
+```
+$PSVersionTable.PSVersion
+```
+
+<img width="719" alt="1  PSVersionTable PSVersion command" src="https://github.com/user-attachments/assets/ba3fb11b-99d9-475e-93b0-dcc242e54085" loading="lazy"/>
+
+Observe how things are neatly presented in columns and rows. 
+
+The ```$``` indicates we're referencing an object or variable. And the ```.PSVersion``` is an attribute specifying the data we'd like to reference from the object. It's kind of like saying a pen is an object and its color is an attribute.  If you want to see what color pen I have, you'd need to specify the object you want to see (the pen) and which attribute is important to you (the color). 
+
+In this case, we referenced the PowerShell version attribute from the ```$PSVersionTable``` object.
+
+Let's run the ```clear``` command to clean the terminal up.
+
+Next we'll explore ```cmdlets```. 
+
+I'll start with ```Get-Location```. This ```cmdlet``` shows us the location of our current directory.
+
+<img width="550" alt="2  Get-Location cmdlet" src="https://github.com/user-attachments/assets/062e4eb7-c35a-4aa5-b93c-e7cfe01a715f" loading="lazy"/>
+
+Notice how the syntax of ```cmdlets``` are ```verb-noun```.
+
+Some ```cmdlets``` have aliases, which are basically shortcuts or nicknames that make them quicker to type and give you the same output. We can see a list of them with ```Get-Alias```.
+
+<img width="800" alt="3  Get-Alias cmdlet" src="https://github.com/user-attachments/assets/2b9c0cc8-d01d-4ac1-8543-a325f71afd76" loading="lazy"/>
+
+Although they can help us be more efficient, I'll continue this section by using ```cmdlets``` so we can get familiar with them.
+
+Let's run another one to view the files and folders in our current directory:
+
+```
+Get-ChildItem
+```
+
+<img width="577" alt="4  Get-ChildItem cmdlet" src="https://github.com/user-attachments/assets/abc8b154-4fde-40a9-bd2e-d2aca6f8e205" loading="lazy"/>
+
+This provides the same output as ```dir``` in CMD. 
+
+## File and Directory Operations
+
+Now let's create a new folder.
+
+We'll use the following command: 
+
+```
+New-Item -Path .\testfolder -ItemType Directory
+```
+
+Quick command breakdown:
+- ```New-Item```: This ```cmdlet``` indicates we want to create a new item.
+- ```-Path .\testfolder```: The ```-Path``` parameter specifies where the new item will be created. ```.\testfolder``` is the relative path for the new item. A relative path just means we're specifying a file location based on our current directory (denoted by ```.```). In other words, we're putting ```testfolder``` in our current directory.
+- ```-ItemType Directory```: The ```-ItemType``` parameter specifies the type of item to be created. And the ```Directory``` value indicates that the item to be created is a directory (or folder). 
+
+<img width="800" alt="5  New-Item cmdlet" src="https://github.com/user-attachments/assets/8fe7f6d8-3e27-4f04-bed4-5f87c5c32ea6" loading="lazy"/>
+
+So we created a new folder. 
+
+Next let's change directories using either ```Set-Location``` or ```cd```:
+
+```
+Set-Location .\testfolder\
+```
+
+Now just like we did in CMD, we can ```echo``` text into a new file:
+
+```
+echo "Hello" > hello.txt
+```
+
+Then we can display the file content:
+
+```
+Get-Content hello.txt
+```
+
+<img width="470" alt="6  Create new file and read it in powershell" src="https://github.com/user-attachments/assets/735c1889-b69a-4da0-a7b0-6e25bd6f656a" loading="lazy"/>
+
+We can also append text to a file with the following command:
+
+```
+Add-Content hello.txt "My name is Colton"
+```
+
+<img width="544" alt="7  append content in powershell" src="https://github.com/user-attachments/assets/2f0a42e5-fd44-416e-9790-34f6afee0513" loading="lazy"/>
+
+## Process Management
+
+Similar to ```tasklist``` in CMD, we can view a list of running processes with ```Get-Process```.
+
+<img width="800" alt="8  Get-Process cmdlet" src="https://github.com/user-attachments/assets/8d152c50-5a34-4a37-9087-f458f6147788" loading="lazy"/>
+
+We can start processes the same way as CMD. For example, we can run ```notepad``` directly from the command line. Let's open up our ```hello.txt``` file with an active instance of ```notepad```.
+
+```
+Start-Process notepad hello.txt
+```
+
+<img width="800" alt="9  start notepad in powershell" src="https://github.com/user-attachments/assets/8f1d05f4-8aec-4d0c-94b6-8262e3f188bd" loading="lazy"/>
+
+We can also terminate the running process in PowerShell.
+
+To do this, just like in CMD, we need to find the PID for ```notepad```.
+
+```
+Get-Process | Where-Object {$_.Name -eq "notepad }
+```
+
+Quick command breakdown:
+- ```Get-Process```: This ```cmdlet``` retrives a list of running processes currently running on the system.
+- ```|```: The pipe operator takes the output from ```Get-Process``` and passes it as input to the next command.
+- ```Where-Object```: The ```Where-Object``` cmdlet filters object passed through the pipeline based on specified criteria.
+- ```{ $_.Name -eq "notepad }```: This is the specific criteria being filtered. The ```$_``` is an automatic variable that represents the current object in the pipeline (```Get-Process```). The ```.Name``` property refers to the name of the process. The ```-eq``` operator means "equal to." And ```notepad``` is the process name we're filtering for. 
+
+<img width="641" alt="10  filter for notepad process in powershell" src="https://github.com/user-attachments/assets/2121c320-c59a-467f-ab86-39ebf2c4b691" loading="lazy"/>
+
+Now that we discovered the PID is ```5720```, we can terminate the process:
+
+```
+Stop-Process -Id 5720
+```
+
+Now ```notepad``` has been terminated.
+
+<img width="700" alt="11  Stop-Process cmdlet" src="https://github.com/user-attachments/assets/04438881-be18-49dd-b16b-11971ef43364" loading="lazy"/>
+
+## File Management
+
+Next let's copy files into different locations. 
+
+First I'll navigate to the parent directory. Then I'll copy our original ```hello.txt``` file into the parent directory using the following command:
+
+```
+Copy-Item -Path .\testfolder\hello.txt -Destination .\
+```
+
+Quick command breakdown: 
+
+- ```Copy-Item```: This ```cmdlet``` specifies we want to copy an item.
+- ```-Path .\testfolder\hello.txt```: This specifies which item we want to copy. In this case, it's the relative path for our ```hello.txt``` file. 
+- ```-Destination .\```: This specifies the destination of our copied file. In this case, the ```.\``` indicates our current directory.
+
+<img width="590" alt="12  Copy-Item cmdlet" src="https://github.com/user-attachments/assets/05603da1-a09d-4566-a17e-8d75bd1ba89e" loading="lazy"/>
+
+Let's rename this file:
+
+```
+Rename-Item -Path .\hello.txt -NewName NewHello.txt
+
+<img width="450" alt="13  Rename-Item cmdlet" src="https://github.com/user-attachments/assets/8cbe44e2-d266-4106-840c-216972d8b995" loading="lazy"/>
+
+I don't want duplicate files though. 
+
+So we'll delete the newly copied file, which has a new name:
+
+```
+Remove-Item .\NewHello.txt
+```
+
+<img width="475" alt="14  Remove-Item cmdlet" src="https://github.com/user-attachments/assets/0c9c104e-4a16-4b75-b465-753f60d36b11" loading="lazy"/>
+
+I'll add a two more files to demonstrate the next command:
+
+<img width="505" alt="15  Adding two new files through powershell" src="https://github.com/user-attachments/assets/4a2a0e90-9011-430f-a563-b3f5592670de" loading="lazy"/>
+
+Just like in the CMD terminal, we can delete multiple items at once:
+
+```
+Remove-Item hello*.txt
+```
+
+<img width="500" alt="16  Remove-Item for multiple files at once" src="https://github.com/user-attachments/assets/5a13965c-85cf-41c5-849f-99087298e89b" loading="lazy"/>
+
+Great. Now let's actually delete the ```testfolder``` directory. 
+
+```
+Remove-Item .\testfolder\ -Recurse
+```
+
+The ```-Recurse``` parameter indicates that the command should remove all items within the specified directory (since we still have files in them).
+
+<img width="484" alt="17  Remove-item cmlet for directory" src="https://github.com/user-attachments/assets/65169d04-3cc9-43db-ae2a-f0fe2dcb1a40" loading="lazy"/>
+
+Now our ```testfolder``` is gone.
+
+## Advanced PowerShell Commands
+
+Just like we did in CMD, we can perform more advanced commands in PowerShell.
+
+We can enter ```Get-ComputerInfo``` to check system information.
+
+<img width="800" alt="18  Get-ComputerInfo cmdlet" src="https://github.com/user-attachments/assets/9f1cd3ce-300c-4ed0-ab0a-727efccfe624" loading="lazy"/>
+
+We can enter ```Get-NetIPAddress``` to check the network configuration.
+
+<img width="800" alt="19  Get-NetIPAddress cmdlet" src="https://github.com/user-attachments/assets/a8e6f4c1-a582-4683-84ea-4bf025b04e2c" loading="lazy"/>
+
+And we can also view and modify the Registry in PowerShell. 
+
+Here's how we configure PowerShell to run when we log on.
+
+```
+New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Run PowerShell" -Value "powershell.exe" -PropertyType "String"
+```
+
+Then we can query the Registry Key to verify the entry:
+
+```
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+```
+
+<img width="800" alt="20  Adding items to registry in powershell" src="https://github.com/user-attachments/assets/6240736a-1a7f-49b5-b8d7-693602751fcb" loading="lazy"/>
+
+Finally, we can remove the registry entry:
+
+```
+Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Run PowerShell"
+```
+
+<img width="900" alt="21  remove registry item via powershell" src="https://github.com/user-attachments/assets/b71dc8e6-40e8-497a-92ba-62b58681cd3d" loading="lazy"/>
+
+## Using ISE for Scripting
+
+Harnessing PowerShell scripts gives us unparalleled automation and systems administration abilities.
+
+And to help us, Windows has a built-in tool that guides our script-building process. It's called the Powershell ISE (Integrated Scripting Environment). It makes writing scripts even easier because it shows us what we’re typing, helps us find mistakes, and lets us see the results instantly.
+
+It basically provides us a graphical way of creating our scripts in real-time. 
+
+Let's open up PowerShell ISE.
+
+<img width="750" alt="22  opening powershell ise" src="https://github.com/user-attachments/assets/eba01c83-cb0e-4823-b4ad-5d023166938d" loading="lazy"/>
+
+Once it's loaded up, we can see all possible ```cmdlets``` on the right pane.
+
+<img width="800" alt="23  cmdlets in right pane of ise" src="https://github.com/user-attachments/assets/b4335266-f38a-4b09-92bc-e5522b4e5ea5" loading="lazy"/>
+
+Now to illustrate how PowerShell ISE works, I'll add a script for creating a new user.
+
+This script does four things:
+
+- Creates a new user account.
+- Adds the use to the "Administrators" group.
+- Ensures the user's password never expires.
+- Displays the user details. 
+
+<img width="800" alt="24  Add script to ise" src="https://github.com/user-attachments/assets/22af82b8-88ae-438e-9dbc-68f81036e7ec" loading="lazy"/>
+
+And when we want to run the script, we can press the green start button at the top.
+
+<img width="800" alt="25  Run script in ise" src="https://github.com/user-attachments/assets/fba3d1db-0777-46c2-97c7-4170eabf5d42" loading="lazy"/>
+
+In a future section, I'll cover the script-building process and use the ISE to create one. 
