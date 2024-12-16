@@ -1846,3 +1846,169 @@ Get-EventLog -LogName Security -InstanceID 4624
 Adding the ```-InstanceID``` parameter allows us to see a list of all event logs with that Event ID.
 
 <img width="800" alt="17  Get-EventLog cmdlet with event id" src="https://github.com/user-attachments/assets/01976b16-1f7d-4700-878c-eccd06ad6344" loading="lazy"/>
+
+# Lab #13: PowerShell Scripting
+
+PowerShell scripting is a Windows Systems Administrator's best friend.
+
+A PowerShell script is just a series of commands saved in a text file with the ```.ps1``` extension. When we run the script, it performs the tasks in the order that they're listed, just like following instructions in a recipe. We can skip the hassle of using the GUI or typing commands one by one. It enhances productivity by automating tasks. So in this lab, we'll work through a real-world scripting challenge. 
+
+We'll write one from scratch and become more efficient with task automation.
+
+## PowerShell Scripting Challenge: Create a Script From Scratch
+
+Let's say we're working at a Managed Service Provider (MSP).
+
+Our client's employees are running out of storage space on their workstations. They want us to create a script that'll identify large files taking up space. This will empower their team with the information they need to manage storage more effectively.
+
+We want the script to:
+
+- Find all files on the C:\ that are larger than 5 MB.
+- Sort the large files by size.
+- Save the list to a file called ```LargeFilesOver5MB.txt```.
+- Display a message to the user that confirms the file has been saved.
+
+Let's get started. 
+
+### Step 1: Identify important variables for our script. 
+
+So there are a couple variables we could use for this script:
+
+**1. File size:** We want to find files that are over 5 MB. We'll use the ```$FileSize``` variable to reference this.
+**2. Desktop User:** We want to specify which user account we'll be finding these large files on. We'll use the ```$DesktopUser``` variable to reference this.
+**3. File Path:** We want to specify where we want to save our list of large files. We'll use the ```$FilePath``` variable to reference this.
+**4. File Name:** We want to specify the name of our file so it can be saved properly. We'll use the ```FileName``` variable to reference this. 
+
+<img width="331" alt="1  Variables for script" src="https://github.com/user-attachments/assets/8d86bef9-4e49-4861-8252-1765ea17b831" />
+
+The beauty of using variables lies in its flexibility and ease of use. If we need to adjust the script for different scenarios or share it with another team member, they only need to update the variables—no need to alter the core logic or commands within the script itself.
+
+For instance, if we wanted to search for files larger than 6 MB on a local user account named John, all we would need to do is update the ```$FileSize``` variable to 6MB and the ```$DesktopUser``` variable to John. The rest of the script remains intact, making it simple to adapt and reuse.
+
+Now let's go to step 2.
+
+### Step 2: Find all files on the ```C:\``` that are larger than 5mb.
+
+Next we need to get a list of files on ```C:\```.
+
+This means we want a list of every file stored on disk. To do that, we can use ```Get-ChildItem``` with the ```-Path C:\``` parameter to list out files and folders. However, we need to specify the ```-File``` parameter since we only care about files for this script. And by default, the ```Get-ChildItem``` cmdlet will only list files within the current directory.
+
+So do get files in every sub-directory, we need the ```-Recurse``` parameter to specify we want to repeat the ```Get-ChildItem``` cmdlet for every sub-directory within ```C:\```. 
+
+Here's the command we can use for that:
+
+```
+Get-ChildItem -Path C:\ -File -Recurse -ErrorAction SilentlyContinue
+```
+
+I added ```-ErrorAction SilentlyContinue``` at the end to suppress error messages caused by access-denied issues or missing permissions. This will keep our terminal clean when executing the script.
+
+<img width="455" alt="2  Get-childitem cmdlet for c drive" src="https://github.com/user-attachments/assets/12a5841c-bcd1-47a1-81bb-c7ed093d7de8" loading="lazy"/>
+
+Now the only command left for this step is to filter for files larger that 5 MB. 
+
+We can use the ```Where-Object``` cmdlet to filter objects based on specific criteria. Then we'll use the ```Length``` attribute to specify the file size. Here's what that will look like:
+
+```
+Where-Object { $_.Length -gt $FileSize }
+```
+
+The automatic variable ```$_``` represents the current object we're filtering, which are all the files on ```C:\```. 
+
+We're filtering all those files by ```Length```. And they must be "greater than" 5 MB, denoted by ```-gt $FileSize```. 
+
+Then we'll tie everything together by using a pipe operator:
+
+```
+Get-ChildItem -Path C:\ -File -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.Length -gt $FileSize }
+```
+
+<img width="693" alt="3  Where-object command for script" src="https://github.com/user-attachments/assets/926fd804-baf8-4d9e-bf27-067fc1bf10a1" loading="lazy"/>
+
+We're almost done.
+
+The final thing we need to do is store the output of this whole command into a new variable. I'll name it ```$LargeFiles```. This empowers us to reuse the data in multiple parts of the script without having to input the lengthy command every time. It's simply more efficient.
+
+It'll look like this:
+
+```
+$LargeFiles = Get-ChildItem -Path C:\ -File -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.Length -gt $FileSize }
+```
+
+<img width="741" alt="4  LargeFiles variable for listing out large files" src="https://github.com/user-attachments/assets/b6056913-68e3-4bcd-a3aa-281177a5fa21" loading="lazy"/>
+
+### Step 3: Sort list of files by size and save to a file.
+
+Next we'll sort every large file by the size or length. 
+
+I'll sort by descending order so I can see the biggest files listed first. We can use the ```Sort-Object``` cmdlet to accomplish this. 
+
+Then we'll use ```-Property Length -Descending``` to specify the order in which we want to sort them.
+
+```
+Sort-Object -Property Length -Descending
+```
+
+<img width="743" alt="5  Sort-object command for large file script" src="https://github.com/user-attachments/assets/7ffcfc8d-a75b-48c3-b650-507c9621eb05" loading="lazy"/>
+
+Now we want to save this sorted list into a new file called ```LargeFilesOver5MB.txt```. 
+
+We can use the ```Out-File``` cmdlet to do this. We just need to specify where we want to save it and what the name of the file is. We'll do all at once with the ```-FilePath``` parameter. 
+
+And we'll also use our ```$FilePath``` and ```$FileName``` variables to reference where to save it (and what to call it).
+
+```
+| Out-File -FilePath ($FilePath + $FileName)
+```
+
+<img width="753" alt="6  Out-File command for large file script" src="https://github.com/user-attachments/assets/a89dea2b-28a7-43bf-ba1a-8021afa156b9" loading="lazy"/>
+
+```($FilePath + $FileName)``` combines the two variables to create the full file path. 
+
+Let's wrap up this step by bringing it all together:
+
+```
+$LargeFiles | Sort-Object -Property Length -Descending | Out-File -FilePath ($FilePath + $FileName)
+```
+
+We'll use the ```$LargeFiles``` variable to reference all the previous data (all the files over 5 MB). Then we use all the pipe operators ```|``` to pass the data to the subsequent commands—first sorting all the files by size, then saving it all into a new file document. 
+
+<img width="758" alt="7  Using LargeFiles variable to tie things together" src="https://github.com/user-attachments/assets/bd9f5340-be06-4f41-b02a-bd0bc69b2608" loading="lazy"/>
+
+### Step 4: Display on the terminal that the file was successfully created.
+
+The final thing we'll add to our script is a confirmation message to inform the user that the file creation process is complete. 
+
+It will show where the file is located. And it'll help reassure the user that the script worked as expected. We'll use the ```Write-Host``` cmdlet to do this.
+
+And we'll append the message we want displayed in the terminal:
+
+```
+Write-Host "File has been created in $FilePath."
+```
+
+Our ```$FilePath``` variable will reference the location where the file is saved.
+
+<img width="772" alt="8  write-host cmdlet for large file script" src="https://github.com/user-attachments/assets/e7898060-8556-47c6-a40f-bebf0b54f899" loading="lazy"/>
+
+### Step 5: Run the script.
+
+Finally we can run this script to see what happens.
+
+<img width="754" alt="9  Run large file script" src="https://github.com/user-attachments/assets/be47e860-3d38-4a96-b5cd-d01e55161aab" loading="lazy"/>
+
+It'll take a few moments to process.
+
+Eventually we'll get a confirmation message on the terminal saying the file has been created. We can check this by viewing the directory contents in the ```Desktop``` folder:
+
+```
+ls .\Desktop\
+```
+
+<img width="755" alt="10  Outcome of running large file script" src="https://github.com/user-attachments/assets/dab2c74b-36ad-4ab0-9c50-a07468c053d4" loading="lazy"/>
+
+This tells us the file has been created. 
+
+We can also go to our desktop GUI and see the file on there. If we open it up, we'll see that our large list of file have been added to it.
+
+<img width="800" alt="11  Accessing large file on desktop" src="https://github.com/user-attachments/assets/a84e4bb0-7160-4a6b-866f-bf10f5f81088" loading="lazy"/>
