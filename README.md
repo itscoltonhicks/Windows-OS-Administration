@@ -2017,3 +2017,5 @@ This tells us the file has been created.
 We can also go to our desktop GUI and see the file on there. If we open it up, we'll see that our large list of file have been added to it.
 
 <img width="800" alt="11  Accessing large file on desktop" src="https://github.com/user-attachments/assets/a84e4bb0-7160-4a6b-866f-bf10f5f81088" loading="lazy"/>
+
+[If you'd like to view the PowerShell script, click here.](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/Project-Files/Find-Large-Files-Script.ps1)
