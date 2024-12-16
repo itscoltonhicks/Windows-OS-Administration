@@ -1,4 +1,4 @@
-# Windows OS Administration (Project Labs In Progress)
+# Windows OS Administration
 # Table of Contents
 - [Introduction](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#introduction)
 
@@ -25,6 +25,8 @@
 - [Lab #11: Introduction to PowerShell](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-11-introduction-to-powershell)
 
 - [Lab #12: Windows Event Viewer for Security Investigations](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-12-windows-event-viewer-for-security-investigations)
+
+- [Lab #13: PowerShell Scripting](https://github.com/itscoltonhicks/Windows-OS-Administration/blob/main/README.md#lab-13-powershell-scripting)
 
 # Introduction
 
