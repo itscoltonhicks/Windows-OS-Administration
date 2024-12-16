@@ -1874,10 +1874,13 @@ Let's get started.
 
 So there are a couple variables we could use for this script:
 
-- **1. File size:** We want to find files that are over 5 MB. We'll use the ```$FileSize``` variable to reference this.
-- **2. Desktop User:** We want to specify which user account we'll be finding these large files on. We'll use the ```$DesktopUser``` variable to reference this.
-- **3. File Path:** We want to specify where we want to save our list of large files. We'll use the ```$FilePath``` variable to reference this.
-- **4. File Name:** We want to specify the name of our file so it can be saved properly. We'll use the ```FileName``` variable to reference this. 
+**1. File size:** We want to find files that are over 5 MB. We'll use the ```$FileSize``` variable to reference this.
+
+**2. Desktop User:** We want to specify which user account we'll be finding these large files on. We'll use the ```$DesktopUser``` variable to reference this.
+
+**3. File Path:** We want to specify which directory to save our list of large files on. We'll use the ```$FilePath``` variable to reference this.
+
+**4. File Name:** We want to specify the name of our file so it can be saved properly. We'll use the ```$FileName``` variable to reference this. 
 
 <img width="331" alt="1  Variables for script" src="https://github.com/user-attachments/assets/8d86bef9-4e49-4861-8252-1765ea17b831" />
 
@@ -1887,7 +1890,7 @@ For instance, if we wanted to search for files larger than 6 MB on a local user 
 
 Now let's go to step 2.
 
-### Step 2: Find all files on the ```C:\``` that are larger than 5mb.
+### Step 2: Find all files on the ```C:\``` that are larger than 5 MB.
 
 Next we need to get a list of files on ```C:\```.
 
@@ -1953,7 +1956,7 @@ Sort-Object -Property Length -Descending
 
 Now we want to save this sorted list into a new file called ```LargeFilesOver5MB.txt```. 
 
-We can use the ```Out-File``` cmdlet to do this. We just need to specify where we want to save it and what the name of the file is. We'll do all at once with the ```-FilePath``` parameter. 
+We can use the ```Out-File``` cmdlet to do this. We just need to specify where we want to save it and what the name of the file is. We'll do this all at once with the ```-FilePath``` parameter. 
 
 And we'll also use our ```$FilePath``` and ```$FileName``` variables to reference where to save it (and what to call it).
 
