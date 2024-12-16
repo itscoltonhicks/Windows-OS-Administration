@@ -1874,10 +1874,10 @@ Let's get started.
 
 So there are a couple variables we could use for this script:
 
-**1. File size:** We want to find files that are over 5 MB. We'll use the ```$FileSize``` variable to reference this.
-**2. Desktop User:** We want to specify which user account we'll be finding these large files on. We'll use the ```$DesktopUser``` variable to reference this.
-**3. File Path:** We want to specify where we want to save our list of large files. We'll use the ```$FilePath``` variable to reference this.
-**4. File Name:** We want to specify the name of our file so it can be saved properly. We'll use the ```FileName``` variable to reference this. 
+- **1. File size:** We want to find files that are over 5 MB. We'll use the ```$FileSize``` variable to reference this.
+- **2. Desktop User:** We want to specify which user account we'll be finding these large files on. We'll use the ```$DesktopUser``` variable to reference this.
+- **3. File Path:** We want to specify where we want to save our list of large files. We'll use the ```$FilePath``` variable to reference this.
+- **4. File Name:** We want to specify the name of our file so it can be saved properly. We'll use the ```FileName``` variable to reference this. 
 
 <img width="331" alt="1  Variables for script" src="https://github.com/user-attachments/assets/8d86bef9-4e49-4861-8252-1765ea17b831" />
 
